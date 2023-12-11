@@ -23,6 +23,17 @@ struct TwoWorkoutCycleData {
 
 }
 
+var categoryList = [
+    WorkCycle(id: UUID(), workPart: "가슴", workImage: "chest"),
+    WorkCycle(id: UUID(), workPart: "등", workImage: "backBody"),
+    WorkCycle(id: UUID(), workPart: "하체", workImage: "lowerBody"),
+    WorkCycle(id: UUID(), workPart: "삼두", workImage: "chest"),
+    WorkCycle(id: UUID(), workPart: "이두", workImage: "backBody"),
+    WorkCycle(id: UUID(), workPart: "하체", workImage: "lowerBody")
+
+
+]
+
 let cycleList = ["무분할", "2분할", "3분할", "4분할", "5분할"]
 
 
@@ -34,11 +45,13 @@ let twoCycleList   = [
     WorkCycle(id: UUID(), workPart: "하체", workImage: "lowerBody")
 ]
 
-//let threeCycleList = [
-//    WorkCycle(id: UUID(), workPart: "가슴, 삼두", workImage: "chest"),
-//    WorkCycle(id: UUID(), workPart: "등, 이두", workImage: "backBody"),
-//    WorkCycle(id: UUID(), workPart: "하체, 어깨", workImage: "lowerBody")
-//]
+let threeCycleList = [
+    WorkCycle(id: UUID(), workPart: "가슴, 삼두", workImage: "chest"),
+    WorkCycle(id: UUID(), workPart: "등, 이두", workImage: "backBody"),
+    WorkCycle(id: UUID(), workPart: "하체, 어깨", workImage: "lowerBody")
+]
+
+
 let fourCycleList  = [
     WorkCycle(id: UUID(), workPart: "가슴, 삼두", workImage: "chest"),
     WorkCycle(id: UUID(), workPart: "등, 이두", workImage: "backBody"),

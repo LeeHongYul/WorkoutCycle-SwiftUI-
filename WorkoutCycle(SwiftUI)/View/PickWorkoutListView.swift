@@ -11,7 +11,7 @@ struct PickWorkoutListView: View {
     var body: some View {
         NavigationView {
             VStack {
-                List(TwoWorkoutCycleData.orderedCycleLists, id: \.id) { cycle in
+                List(fourCycleList, id: \.id) { cycle in
                     PickWorkoutListCell(workoutData: cycle)
                         .onTapGesture {
                             print("Tapped")
