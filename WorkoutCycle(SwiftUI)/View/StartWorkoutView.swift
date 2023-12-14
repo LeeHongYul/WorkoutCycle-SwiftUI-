@@ -16,42 +16,64 @@ struct StartWorkoutView: View {
 
 
     var body: some View {
-        NavigationView {
+        TabView {
+            NavigationView {
 
-            VStack {
+                VStack {
 
-                //CategoryView
-                CategoryListView
+                    //CategoryView
+                    CategoryListView
 
 
-                //CustomWorkoutView
-                RoundedRectangle(cornerRadius: 10)
-                    .frame(width: 300, height: 300)
-                    .foregroundColor(.gray)
-                    .padding()
-                    .overlay(
-                        Image(systemName: "plus")
-                            .resizable()
-                            .scaledToFit()
-                            .frame(width: 180, height: 180)
-                            .clipShape(RoundedRectangle(cornerRadius: 15))
-                    )
+                    //CustomWorkoutView
 
-                Spacer()
+                    NavigationLink(destination: PickWorkoutListView()) {
+                        RoundedRectangle(cornerRadius: 10)
+                            .frame(width: 300, height: 300)
+                            .foregroundColor(.gray).opacity(0.2)
+                            .padding()
+                            .overlay(
+                                VStack {
+                                    Image(systemName: "plus")
+                                        .resizable()
+                                        .scaledToFit()
+                                        .foregroundColor(.gray)
+                                        .frame(width: 180, height: 180)
+                                        .clipShape(RoundedRectangle(cornerRadius: 15))
 
-                // ExampleWorkoutView
-                List {
-                    ForEach(0..<4) { _ in
-                        Text("Exmaple Workout")
-                            .font(.title2)
-                            .fontWeight(.semibold)
+                                    Text("Make your own Workout")
+                                        .font(.title3)
+                                        .fontWeight(.semibold)
+                                        .foregroundStyle(.blue)
+                                }
+                            )
                     }
-                }
 
-                Spacer()
+                    Spacer()
+
+                    // ExampleWorkoutView
+                    List {
+                        ForEach(fiveCycleList, id: \.id) { item in
+                            Text(item.workPart)
+                                .font(.title2)
+                                .fontWeight(.semibold)
+                        }
+                    }
+                    .listStyle(.plain)
+
+                    Spacer()
+                }
+                .navigationTitle("My Workout Cycle")
             }
-            .navigationTitle("My Workout Cycle")
+
+            DetailWorkoutView()
+                .tabItem {
+                    Image(systemName: "plus")
+                }
         }
+
+
+
     }
 
     var CategoryListView: some View {
