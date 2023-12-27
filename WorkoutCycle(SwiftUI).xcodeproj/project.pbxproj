@@ -23,6 +23,8 @@
 		5DE834092B3C580800C4953A /* DateHolder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DE834082B3C580800C4953A /* DateHolder.swift */; };
 		5DE8340B2B3C584100C4953A /* DateScrollerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DE8340A2B3C584100C4953A /* DateScrollerView.swift */; };
 		5DE8340D2B3C592F00C4953A /* CalendarHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DE8340C2B3C592F00C4953A /* CalendarHelper.swift */; };
+		5DE8340F2B3C709700C4953A /* CalendarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DE8340E2B3C709700C4953A /* CalendarCell.swift */; };
+		5DE834112B3C718F00C4953A /* MonthStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DE834102B3C718F00C4953A /* MonthStruct.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +45,8 @@
 		5DE834082B3C580800C4953A /* DateHolder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateHolder.swift; sourceTree = "<group>"; };
 		5DE8340A2B3C584100C4953A /* DateScrollerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateScrollerView.swift; sourceTree = "<group>"; };
 		5DE8340C2B3C592F00C4953A /* CalendarHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarHelper.swift; sourceTree = "<group>"; };
+		5DE8340E2B3C709700C4953A /* CalendarCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarCell.swift; sourceTree = "<group>"; };
+		5DE834102B3C718F00C4953A /* MonthStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthStruct.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +106,8 @@
 				5D8A4F502B26E2F100C755A0 /* PickWorkoutListCell.swift */,
 				5D8A4F582B2B016900C755A0 /* HomeView.swift */,
 				5D8A4F5A2B2B02A500C755A0 /* CalendarView.swift */,
+				5DE8340E2B3C709700C4953A /* CalendarCell.swift */,
+				5DE834102B3C718F00C4953A /* MonthStruct.swift */,
 				5DE8340A2B3C584100C4953A /* DateScrollerView.swift */,
 				5DE8340C2B3C592F00C4953A /* CalendarHelper.swift */,
 				5DE834082B3C580800C4953A /* DateHolder.swift */,
@@ -193,8 +199,10 @@
 				5D8A4F512B26E2F100C755A0 /* PickWorkoutListCell.swift in Sources */,
 				5DE8340B2B3C584100C4953A /* DateScrollerView.swift in Sources */,
 				5D8A4F572B2719D000C755A0 /* StartWorkoutView.swift in Sources */,
+				5DE8340F2B3C709700C4953A /* CalendarCell.swift in Sources */,
 				5D8A4F5D2B2B036E00C755A0 /* RecordView.swift in Sources */,
 				5D8A4F4F2B26DA8400C755A0 /* WorkOutModel.swift in Sources */,
+				5DE834112B3C718F00C4953A /* MonthStruct.swift in Sources */,
 				5DE0E3542B1735E700A2C701 /* ContentView.swift in Sources */,
 				5D8A4F5B2B2B02A500C755A0 /* CalendarView.swift in Sources */,
 				5DE834092B3C580800C4953A /* DateHolder.swift in Sources */,
