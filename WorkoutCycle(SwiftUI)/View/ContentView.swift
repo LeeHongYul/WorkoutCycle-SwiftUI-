@@ -14,8 +14,10 @@ struct ContentView: View {
             HomeView()
                 .tabItem { Image(systemName: "house") }
 
+            let dateHolder = DateHolder()
             CalendarView()
                 .tabItem { Image(systemName: "calendar") }
+                .environmentObject(dateHolder)
 
             RecordView()
                 .tabItem { Image(systemName: "list.clipboard") }

@@ -11,23 +11,18 @@ import SwiftUI
 
 struct CalendarView: View {
 
-    @State private var date = Date()
+    @EnvironmentObject var dateHolder: DateHolder
+
 
     var body: some View {
-        VStack {
-            Text("This is my Calendar")
-                .font(.largeTitle)
-
-            DatePicker("Today Calendar", selection: $date, displayedComponents: [.date])
-                .datePickerStyle(.graphical)
-
-            Spacer()
-
-            
+        VStack(spacing: 1) {
+            DateScrollerView()
+                .environmentObject(dateHolder)
+                .padding()
         }
+
     }
 }
-
 #Preview {
     CalendarView()
 }

@@ -14,26 +14,36 @@ struct HomeView: View {
     var body: some View {
         NavigationView {
             VStack{
+                HStack {
+                    Image(systemName: "location.north.fill")
+                        .resizable()
+                        .frame(width: 20, height: 20)
+
+                    Text("Suwon, Korea")
+                        .font(.title2)
+                        .foregroundStyle(.gray)
+
+                    Spacer()
+
+                    NavigationLink {
+                        AddListView()
+                    } label: {
+                        Image(systemName: "plus.circle.fill")
+                    }
+
+                }
+                .padding()
+
                 CategoryListView
 
-                Spacer()
-                
                 MyWorkoutListView
 
+                TodayWorkoutListView
+
+                Spacer()
             }
 
-
-                        .navigationTitle("My Workout Cycle")
-                        .navigationBarItems(trailing:
-                            Button(action: {
-                                // 버튼이 클릭되었을 때 수행할 동작
-                                print("Button Tapped!")
-                            }) {
-                                Image(systemName: "plus.circle.fill")
-                                    .font(.title)
-                            }
-                        )
-                }
+        }
     }
 
     var CategoryListView: some View {
@@ -65,13 +75,32 @@ struct HomeView: View {
 
     var MyWorkoutListView: some View {
         List {
-            ForEach(fiveCycleList, id: \.id) { item in
-                Text(item.workPart)
-                    .font(.title2)
-                    .fontWeight(.semibold)
+            if !fiveCycleList.isEmpty {
+                ContentUnavailableView(label: {
+                    Label("No WorkCycle", systemImage: "tray.fill")
+                })
+            } else {
+                ForEach(fiveCycleList, id: \.id) { item in
+                    Text(item.workPart)
+                        .font(.title2)
+                        .fontWeight(.semibold)
+                }
             }
         }
         .listStyle(.plain)
+    }
+
+    var TodayWorkoutListView: some View {
+        HStack {
+            Rectangle()
+                .frame(height: 200)
+                .foregroundColor(.yellow)
+                .cornerRadius(30)
+                .padding()
+                .overlay {
+                    Text("Today is Back Day")
+                }
+        }
     }
 }
 
