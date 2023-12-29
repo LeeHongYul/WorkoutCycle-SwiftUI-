@@ -25,6 +25,7 @@
 		5DE8340D2B3C592F00C4953A /* CalendarHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DE8340C2B3C592F00C4953A /* CalendarHelper.swift */; };
 		5DE8340F2B3C709700C4953A /* CalendarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DE8340E2B3C709700C4953A /* CalendarCell.swift */; };
 		5DE834112B3C718F00C4953A /* MonthStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DE834102B3C718F00C4953A /* MonthStruct.swift */; };
+		5DE834132B3D950500C4953A /* MainCalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DE834122B3D950500C4953A /* MainCalendarView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,6 +48,7 @@
 		5DE8340C2B3C592F00C4953A /* CalendarHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarHelper.swift; sourceTree = "<group>"; };
 		5DE8340E2B3C709700C4953A /* CalendarCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarCell.swift; sourceTree = "<group>"; };
 		5DE834102B3C718F00C4953A /* MonthStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthStruct.swift; sourceTree = "<group>"; };
+		5DE834122B3D950500C4953A /* MainCalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCalendarView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +109,7 @@
 				5D8A4F582B2B016900C755A0 /* HomeView.swift */,
 				5D8A4F5A2B2B02A500C755A0 /* CalendarView.swift */,
 				5DE8340E2B3C709700C4953A /* CalendarCell.swift */,
+				5DE834122B3D950500C4953A /* MainCalendarView.swift */,
 				5DE834102B3C718F00C4953A /* MonthStruct.swift */,
 				5DE8340A2B3C584100C4953A /* DateScrollerView.swift */,
 				5DE8340C2B3C592F00C4953A /* CalendarHelper.swift */,
@@ -196,6 +199,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5D8A4F4D2B26DA4700C755A0 /* PickWorkoutListView.swift in Sources */,
+				5DE834132B3D950500C4953A /* MainCalendarView.swift in Sources */,
 				5D8A4F512B26E2F100C755A0 /* PickWorkoutListCell.swift in Sources */,
 				5DE8340B2B3C584100C4953A /* DateScrollerView.swift in Sources */,
 				5D8A4F572B2719D000C755A0 /* StartWorkoutView.swift in Sources */,

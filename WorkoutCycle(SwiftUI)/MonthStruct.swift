@@ -1,23 +1,23 @@
+////
+////  MonthStruct.swift
+////  WorkoutCycle(SwiftUI)
+////
+////  Created by 이홍렬 on 12/27/23.
+////
 //
-//  MonthStruct.swift
-//  WorkoutCycle(SwiftUI)
+//import Foundation
 //
-//  Created by 이홍렬 on 12/27/23.
+//struct MonthStruct {
+//    var monthType: MonthType
+//    var dayInt: Int
+//    
+//    func day() -> String {
+//        return String(dayInt)
+//    }
+//}
 //
-
-import Foundation
-
-struct MonthStruct {
-    var monthType: MonthType
-    var dayInt: Int
-    
-    func day() -> String {
-        return String(dayInt)
-    }
-}
-
-enum MonthType {
-    case Previous
-    case Current
-    case Next
-}
+//enum MonthType {
+//    case Previous
+//    case Current
+//    case Next
+//}
