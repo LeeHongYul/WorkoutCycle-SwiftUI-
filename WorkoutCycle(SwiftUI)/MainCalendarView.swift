@@ -20,7 +20,7 @@ struct MainCalendarView: UIViewRepresentable {
     }
     
     func makeCoordinator() -> Coordinator {
-
+        Coordinator(parent: self, eventStore: _eventStore)
     }
 
     func updateUIView(_ uiView: UICalendarView, context: Context) {
@@ -28,6 +28,15 @@ struct MainCalendarView: UIViewRepresentable {
     }
 
     class Coordinator: NSObject, UICalendarViewDelegate {
+        var parent: MainCalendarView
+        @ObservedObject var eventStore: EventStore
+        init(parent: MainCalendarView, eventStore: ObservedObject<EventStore>) {
+            self.parent = parent
+            self._eventStore = eventStore
+        }
 
+        func calendarView(_ calendarView: UICalendarView, decorationFor dateComponents: DateComponents) -> UICalendarView.Decoration? {
+            return nil
+        }
     }
 }
