@@ -14,7 +14,7 @@ struct ContentView: View {
             HomeView()
                 .tabItem { Image(systemName: "house") }
 
-            CalendarView()
+            CalendarTabView()
                 .tabItem { Image(systemName: "calendar") }
 
             RecordView()

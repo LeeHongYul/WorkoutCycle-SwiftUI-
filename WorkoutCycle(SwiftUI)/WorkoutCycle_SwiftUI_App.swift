@@ -9,6 +9,7 @@ import SwiftUI
 
 @main
 struct WorkoutCycle_SwiftUI_App: App {
+
     var body: some Scene {
         WindowGroup {
             ContentView()
