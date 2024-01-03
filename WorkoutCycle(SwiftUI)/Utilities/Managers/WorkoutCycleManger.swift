@@ -8,48 +8,38 @@
 import Foundation
 import CoreData
 
-class WorkoutCycleManger: BaseManager {
-    static let shared = WorkoutCycleManger()
+class WorkoutCycleManger: ObservableObject {
 
-    private override init() {
+    let container = NSPersistentContainer(name: "Model")
 
+    init() {
+        container.loadPersistentStores { desc, error in
+            if let error = error {
+                print("failed to laod data \(error.localizedDescription)")
+            }
+        }
     }
 
-    var mainContext: NSManagedObjectContext {
-        return persistentContainer.viewContext
-    }
-
-    var workCycleList = [WorkCycleEntity]()
-
-    func fetchWorkCycle() {
-        let request = WorkCycleEntity.fetchRequest()
-
+    func saveWorkCycle(context: NSManagedObjectContext) {
         do {
-            workCycleList = try mainContext.fetch(request)
+            try context.save()
+            print("Data Saved")
         } catch {
-            print("fetch 실패")
+            print("failed to save data")
         }
     }
 
-    func addWorkCycle(name: String) {
-        let newWorkCycle = WorkCycleEntity(context: mainContext)
+    func addWorkCycle(name: String, context: NSManagedObjectContext) {
+        let workcycle = WorkCycleEntity(context: context)
 
-        newWorkCycle.name = name
+        workcycle.name = name
 
-        workCycleList.insert(newWorkCycle, at: 0)
-
-        saveContext()
+        saveWorkCycle(context: context)
     }
 
-    func deleteOneWorkData(workCycle: WorkCycleEntity) {
-        mainContext.delete(workCycle)
-        saveContext()
-    }
+    func editWorkCycle(workcycle: WorkCycleEntity, name: String, context: NSManagedObjectContext) {
+        workcycle.name = name
 
-    func deleteAllWorkData() {
-        for i in workCycleList {
-            mainContext.delete(i)
-        }
-        saveContext()
+        saveWorkCycle(context: context)
     }
 }

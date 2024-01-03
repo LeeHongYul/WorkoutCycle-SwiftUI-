@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		5D0660CC2B455CA5006B19A6 /* BaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D0660CB2B455CA5006B19A6 /* BaseManager.swift */; };
+		5D0660CE2B458A82006B19A6 /* AddMemoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D0660CD2B458A82006B19A6 /* AddMemoView.swift */; };
 		5D394E132B4548370005559A /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D394E122B4548370005559A /* CalendarView.swift */; };
 		5D394E1C2B45597A0005559A /* WorkoutCycleManger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D394E1B2B45597A0005559A /* WorkoutCycleManger.swift */; };
 		5D394E1F2B455B980005559A /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5D394E1D2B455B980005559A /* Model.xcdatamodeld */; };
@@ -28,6 +29,7 @@
 
 /* Begin PBXFileReference section */
 		5D0660CB2B455CA5006B19A6 /* BaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseManager.swift; sourceTree = "<group>"; };
+		5D0660CD2B458A82006B19A6 /* AddMemoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMemoView.swift; sourceTree = "<group>"; };
 		5D394E122B4548370005559A /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
 		5D394E1B2B45597A0005559A /* WorkoutCycleManger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutCycleManger.swift; sourceTree = "<group>"; };
 		5D394E1E2B455B980005559A /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
@@ -63,6 +65,7 @@
 			children = (
 				5D8A4F582B2B016900C755A0 /* HomeView.swift */,
 				5D8A4F562B2719D000C755A0 /* StartWorkoutView.swift */,
+				5D8A4F5E2B2C336300C755A0 /* AddListView.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -164,8 +167,8 @@
 				5DE0E3552B1735E800A2C701 /* Assets.xcassets */,
 				5DE0E3572B1735E800A2C701 /* Preview Content */,
 				5D8A4F502B26E2F100C755A0 /* PickWorkoutListCell.swift */,
-				5D8A4F5E2B2C336300C755A0 /* AddListView.swift */,
 				5D394E1D2B455B980005559A /* Model.xcdatamodeld */,
+				5D0660CD2B458A82006B19A6 /* AddMemoView.swift */,
 			);
 			path = "WorkoutCycle(SwiftUI)";
 			sourceTree = "<group>";
@@ -262,6 +265,7 @@
 				5D8A4F592B2B016900C755A0 /* HomeView.swift in Sources */,
 				5DE0E3522B1735E700A2C701 /* WorkoutCycle_SwiftUI_App.swift in Sources */,
 				5D8A4F552B2702A300C755A0 /* DetailWorkoutView.swift in Sources */,
+				5D0660CE2B458A82006B19A6 /* AddMemoView.swift in Sources */,
 				5D8A4F5F2B2C336300C755A0 /* AddListView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

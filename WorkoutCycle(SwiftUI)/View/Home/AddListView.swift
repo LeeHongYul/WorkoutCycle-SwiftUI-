@@ -9,6 +9,10 @@ import SwiftUI
 
 struct AddListView: View {
 
+    @Environment(\.managedObjectContext) var managedObjContext
+    @Environment(\.dismiss) var dismiss
+    
+
     @State private var title = ""
     @State private var type = ""
     @State private var typePicker = ""
@@ -27,6 +31,13 @@ struct AddListView: View {
 
                     TextField("Name", text: $title)
                     TextField("Type", text: $type)
+                    Button {
+                        WorkoutCycleManger().addWorkCycle(name: title, context: managedObjContext)
+                        dismiss()
+                    } label: {
+                        Text("Sumbit")
+                    }
+
                 }
             }
             .navigationTitle("Add Workout")

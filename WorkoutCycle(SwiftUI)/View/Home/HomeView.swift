@@ -6,8 +6,11 @@
 //
 
 import SwiftUI
+import CoreData
 
 struct HomeView: View {
+    @Environment(\.managedObjectContext) var managedObjContext
+    @FetchRequest(sortDescriptors: [SortDescriptor(\WorkCycleEntity.name, order: .reverse)]) var workCycleList: FetchedResults<WorkCycleEntity>
 
     @State var selectedCategory = ""
 
@@ -74,20 +77,29 @@ struct HomeView: View {
     }
 
     var MyWorkoutListView: some View {
+
         List {
-            if !fiveCycleList.isEmpty {
+            if workCycleList.isEmpty {
                 ContentUnavailableView(label: {
                     Label("No WorkCycle", systemImage: "tray.fill")
                 })
             } else {
-                ForEach(fiveCycleList, id: \.id) { item in
-                    Text(item.workPart)
-                        .font(.title2)
-                        .fontWeight(.semibold)
+                ForEach(workCycleList) { input in
+                    Text(input.name!)
+                }.onDelete { indexSet in
+                    deleteWorkCycle(offsets: indexSet)
                 }
             }
         }
         .listStyle(.plain)
+    }
+
+    func deleteWorkCycle(offsets: IndexSet) {
+        withAnimation {
+            offsets.map { workCycleList[$0] }.forEach(managedObjContext.delete)
+
+            WorkoutCycleManger().saveWorkCycle(context: managedObjContext)
+        }
     }
 
     var TodayWorkoutListView: some View {

@@ -9,10 +9,12 @@ import SwiftUI
 
 @main
 struct WorkoutCycle_SwiftUI_App: App {
+    @StateObject private var workCycleManger = WorkoutCycleManger()
 
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environment(\.managedObjectContext, workCycleManger.container.viewContext)
         }
     }
 }
