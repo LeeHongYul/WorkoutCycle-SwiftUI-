@@ -9,10 +9,10 @@ import SwiftUI
 import CoreData
 
 struct HomeView: View {
-    @Environment(\.managedObjectContext) var managedObjContext
-    @FetchRequest(sortDescriptors: [SortDescriptor(\WorkCycleEntity.name, order: .reverse)]) var workCycleList: FetchedResults<WorkCycleEntity>
-
     @State var selectedCategory = ""
+
+    @Environment(\.managedObjectContext) var managedObjContext
+    @FetchRequest(sortDescriptors: []) var workCycleList: FetchedResults<WorkCycleEntity>
 
     var body: some View {
         NavigationView {
@@ -41,9 +41,9 @@ struct HomeView: View {
 
                 MyWorkoutListView
 
-                TodayWorkoutListView
+                CycleListView
 
-                Spacer()
+                TodayWorkoutListView
             }
 
         }
@@ -73,6 +73,7 @@ struct HomeView: View {
                     }
                 }
             }
+            .padding()
         }
     }
 
@@ -83,9 +84,38 @@ struct HomeView: View {
                 ContentUnavailableView(label: {
                     Label("No WorkCycle", systemImage: "tray.fill")
                 })
+            } else if selectedCategory ==  "전체" || selectedCategory == "" {
+                ForEach(workCycleList) { input in
+                    HStack {
+                        Spacer()
+                        Text(input.name!)
+                        Text(input.type!)
+                        Spacer()
+                    }
+                }.onDelete { indexSet in
+                    deleteWorkCycle(offsets: indexSet)
+                }
+            } else {
+                FilteredList(filter: selectedCategory)
+            }
+        }
+        .listStyle(.plain)
+    }
+
+    var CycleListView: some View {
+
+        List {
+            if workCycleList.isEmpty {
+                ContentUnavailableView(label: {
+                    Label("No Workout Schedule", systemImage: "gym.bag")
+                })
             } else {
                 ForEach(workCycleList) { input in
-                    Text(input.name!)
+                    HStack {
+                        Text(input.name!)
+                        Text(input.type!)
+                    }
+
                 }.onDelete { indexSet in
                     deleteWorkCycle(offsets: indexSet)
                 }
@@ -105,7 +135,7 @@ struct HomeView: View {
     var TodayWorkoutListView: some View {
         HStack {
             Rectangle()
-                .frame(height: 200)
+                .frame(height: 100)
                 .foregroundColor(.yellow)
                 .cornerRadius(30)
                 .padding()

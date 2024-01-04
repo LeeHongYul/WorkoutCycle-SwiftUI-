@@ -29,16 +29,18 @@ class WorkoutCycleManger: ObservableObject {
         }
     }
 
-    func addWorkCycle(name: String, context: NSManagedObjectContext) {
+    func addWorkCycle(name: String, type: String, context: NSManagedObjectContext) {
         let workcycle = WorkCycleEntity(context: context)
 
         workcycle.name = name
+        workcycle.type = type
 
         saveWorkCycle(context: context)
     }
 
-    func editWorkCycle(workcycle: WorkCycleEntity, name: String, context: NSManagedObjectContext) {
+    func editWorkCycle(workcycle: WorkCycleEntity, name: String, type: String,  context: NSManagedObjectContext) {
         workcycle.name = name
+        workcycle.type = type
 
         saveWorkCycle(context: context)
     }

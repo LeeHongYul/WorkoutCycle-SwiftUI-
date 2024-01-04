@@ -32,7 +32,7 @@ struct AddListView: View {
                     TextField("Name", text: $title)
                     TextField("Type", text: $type)
                     Button {
-                        WorkoutCycleManger().addWorkCycle(name: title, context: managedObjContext)
+                        WorkoutCycleManger().addWorkCycle(name: title, type: typePicker, context: managedObjContext)
                         dismiss()
                     } label: {
                         Text("Sumbit")

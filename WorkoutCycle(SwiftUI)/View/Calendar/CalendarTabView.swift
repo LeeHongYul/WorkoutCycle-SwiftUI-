@@ -10,14 +10,27 @@ import SwiftUI
 
 struct CalendarTabView: View {
 
-    
+
     var body: some View {
         NavigationStack {
-            ScrollView {
+            VStack {
                 CalendarView(interval: DateInterval(start: .distantPast, end: .distantFuture))
+
+                RecordListView
             }
-                .navigationTitle("Calendar View")
+            .navigationTitle("Calendar View")
         }
+    }
+
+    var RecordListView: some View {
+
+        List {
+            Text("AA")
+            Text("AA")
+            Text("AA")
+            Text("AA")
+        }
+        .listStyle(.plain)
     }
 }
 

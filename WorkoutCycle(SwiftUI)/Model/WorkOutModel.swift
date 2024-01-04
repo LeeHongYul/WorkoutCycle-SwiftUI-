@@ -24,6 +24,7 @@ struct TwoWorkoutCycleData {
 }
 
 var categoryList = [
+    WorkCycle(id: UUID(), workPart: "전체", workImage: "upperBody"),
     WorkCycle(id: UUID(), workPart: "가슴", workImage: "chest"),
     WorkCycle(id: UUID(), workPart: "등", workImage: "backBody"),
     WorkCycle(id: UUID(), workPart: "하체", workImage: "lowerBody"),
