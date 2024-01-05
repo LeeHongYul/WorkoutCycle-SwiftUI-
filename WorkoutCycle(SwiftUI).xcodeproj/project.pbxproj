@@ -22,6 +22,7 @@
 		5D8A4F5B2B2B02A500C755A0 /* CalendarTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D8A4F5A2B2B02A500C755A0 /* CalendarTabView.swift */; };
 		5D8A4F5D2B2B036E00C755A0 /* RecordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D8A4F5C2B2B036E00C755A0 /* RecordView.swift */; };
 		5D8A4F5F2B2C336300C755A0 /* AddListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D8A4F5E2B2C336300C755A0 /* AddListView.swift */; };
+		5DDF06F12B47E4ED00B1ACE3 /* RecordManger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DDF06F02B47E4ED00B1ACE3 /* RecordManger.swift */; };
 		5DE0E3522B1735E700A2C701 /* WorkoutCycle_SwiftUI_App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DE0E3512B1735E700A2C701 /* WorkoutCycle_SwiftUI_App.swift */; };
 		5DE0E3542B1735E700A2C701 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DE0E3532B1735E700A2C701 /* ContentView.swift */; };
 		5DE0E3562B1735E800A2C701 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5DE0E3552B1735E800A2C701 /* Assets.xcassets */; };
@@ -44,6 +45,7 @@
 		5D8A4F5A2B2B02A500C755A0 /* CalendarTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarTabView.swift; sourceTree = "<group>"; };
 		5D8A4F5C2B2B036E00C755A0 /* RecordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordView.swift; sourceTree = "<group>"; };
 		5D8A4F5E2B2C336300C755A0 /* AddListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddListView.swift; sourceTree = "<group>"; };
+		5DDF06F02B47E4ED00B1ACE3 /* RecordManger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordManger.swift; sourceTree = "<group>"; };
 		5DE0E34E2B1735E700A2C701 /* WorkoutCycle(SwiftUI).app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "WorkoutCycle(SwiftUI).app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5DE0E3512B1735E700A2C701 /* WorkoutCycle_SwiftUI_App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutCycle_SwiftUI_App.swift; sourceTree = "<group>"; };
 		5DE0E3532B1735E700A2C701 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -77,6 +79,7 @@
 			children = (
 				5D8A4F5A2B2B02A500C755A0 /* CalendarTabView.swift */,
 				5D394E122B4548370005559A /* CalendarView.swift */,
+				5D0660CD2B458A82006B19A6 /* AddMemoView.swift */,
 			);
 			path = Calendar;
 			sourceTree = "<group>";
@@ -111,6 +114,7 @@
 			children = (
 				5D394E1B2B45597A0005559A /* WorkoutCycleManger.swift */,
 				5D0660CB2B455CA5006B19A6 /* BaseManager.swift */,
+				5DDF06F02B47E4ED00B1ACE3 /* RecordManger.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -170,7 +174,6 @@
 				5DE0E3572B1735E800A2C701 /* Preview Content */,
 				5D8A4F502B26E2F100C755A0 /* PickWorkoutListCell.swift */,
 				5D394E1D2B455B980005559A /* Model.xcdatamodeld */,
-				5D0660CD2B458A82006B19A6 /* AddMemoView.swift */,
 				5D8A4F562B2719D000C755A0 /* StartWorkoutView.swift */,
 			);
 			path = "WorkoutCycle(SwiftUI)";
@@ -254,6 +257,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5DDF06F12B47E4ED00B1ACE3 /* RecordManger.swift in Sources */,
 				5D0660CC2B455CA5006B19A6 /* BaseManager.swift in Sources */,
 				5D8A4F4D2B26DA4700C755A0 /* PickWorkoutListView.swift in Sources */,
 				5D8A4F512B26E2F100C755A0 /* PickWorkoutListCell.swift in Sources */,

@@ -86,12 +86,8 @@ struct HomeView: View {
                 })
             } else if selectedCategory ==  "전체" || selectedCategory == "" {
                 ForEach(workCycleList) { input in
-                    HStack {
-                        Spacer()
-                        Text(input.name!)
-                        Text(input.type!)
-                        Spacer()
-                    }
+                    Text(input.name!)
+                        .frame(maxWidth: .infinity, alignment: .center)
                 }.onDelete { indexSet in
                     deleteWorkCycle(offsets: indexSet)
                 }
@@ -103,25 +99,47 @@ struct HomeView: View {
     }
 
     var CycleListView: some View {
-
-        List {
+        HStack {
             if workCycleList.isEmpty {
                 ContentUnavailableView(label: {
                     Label("No Workout Schedule", systemImage: "gym.bag")
                 })
             } else {
-                ForEach(workCycleList) { input in
+                ScrollView(.horizontal, showsIndicators: false) {
                     HStack {
-                        Text(input.name!)
-                        Text(input.type!)
-                    }
-
-                }.onDelete { indexSet in
-                    deleteWorkCycle(offsets: indexSet)
+                        ForEach(workCycleList) { input in
+                            RoundedRectangle(cornerRadius: 10)
+                                .frame(width: 100, height: 60)
+                                .foregroundColor(.gray).opacity(0.2)
+                                .padding()
+                                .overlay(
+                                    Text(input.name!)
+                                )
+                        }.onDelete { indexSet in
+                            deleteWorkCycle(offsets: indexSet)
+                        }
+                    }.padding()
                 }
             }
         }
-        .listStyle(.plain)
+        //        List {
+        //            if workCycleList.isEmpty {
+        //                ContentUnavailableView(label: {
+        //                    Label("No Workout Schedule", systemImage: "gym.bag")
+        //                })
+        //            } else {
+        //                ForEach(workCycleList) { input in
+        //                    HStack {
+        //                        Text(input.name!)
+        //                        Text(input.type!)
+        //                    }
+        //
+        //                }.onDelete { indexSet in
+        //                    deleteWorkCycle(offsets: indexSet)
+        //                }
+        //            }
+        //        }
+
     }
 
     func deleteWorkCycle(offsets: IndexSet) {
@@ -135,7 +153,7 @@ struct HomeView: View {
     var TodayWorkoutListView: some View {
         HStack {
             Rectangle()
-                .frame(height: 100)
+                .frame(height: 50)
                 .foregroundColor(.yellow)
                 .cornerRadius(30)
                 .padding()

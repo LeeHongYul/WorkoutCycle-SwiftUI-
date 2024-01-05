@@ -12,7 +12,6 @@ struct AddListView: View {
     @Environment(\.managedObjectContext) var managedObjContext
     @Environment(\.dismiss) var dismiss
     
-
     @State private var title = ""
     @State private var type = ""
     @State private var typePicker = ""

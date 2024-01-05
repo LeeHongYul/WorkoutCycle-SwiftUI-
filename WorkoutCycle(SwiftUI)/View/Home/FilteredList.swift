@@ -13,11 +13,7 @@ struct FilteredList: View {
 
     var body: some View {
         List(fetchRequest, id: \.self) { item in
-            HStack {
-                Spacer()
                 Text("\(item.name ?? "nil")")
-                Spacer()
-            }
         }
         .listStyle(.plain)
     }

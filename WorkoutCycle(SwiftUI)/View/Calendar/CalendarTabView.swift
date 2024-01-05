@@ -9,33 +9,39 @@ import SwiftUI
 
 
 struct CalendarTabView: View {
+    @State private var isAddMemoViewActive = false
+    
+    @Environment(\.managedObjectContext) var managedObjContext
 
+    @FetchRequest(sortDescriptors: []) var recordMemoList: FetchedResults<TodayWorkoutMemoEntity>
 
     var body: some View {
-        NavigationStack {
+
+        NavigationView {
             VStack {
-                CalendarView(interval: DateInterval(start: .distantPast, end: .distantFuture))
+                CalendarView(isAddMemoViewActive: $isAddMemoViewActive, interval: DateInterval(start: .distantPast, end: .distantFuture))
 
                 RecordListView
             }
             .navigationTitle("Calendar View")
+            .sheet(isPresented: $isAddMemoViewActive) {
+                            AddMemoView()
+                        }
         }
     }
 
     var RecordListView: some View {
 
         List {
-            Text("AA")
-            Text("AA")
-            Text("AA")
-            Text("AA")
+            ForEach(recordMemoList) { memo in
+                Text(memo.content!)
+            }
         }
         .listStyle(.plain)
     }
 }
 
-
-#Preview {
-    CalendarTabView()
-}
+//#Preview {
+//    CalendarTabView()
+//}
 

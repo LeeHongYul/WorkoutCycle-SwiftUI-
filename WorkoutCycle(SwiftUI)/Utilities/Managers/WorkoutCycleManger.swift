@@ -8,17 +8,7 @@
 import Foundation
 import CoreData
 
-class WorkoutCycleManger: ObservableObject {
-
-    let container = NSPersistentContainer(name: "Model")
-
-    init() {
-        container.loadPersistentStores { desc, error in
-            if let error = error {
-                print("failed to laod data \(error.localizedDescription)")
-            }
-        }
-    }
+class WorkoutCycleManger: BaseManager {
 
     func saveWorkCycle(context: NSManagedObjectContext) {
         do {
