@@ -87,12 +87,12 @@ struct HomeView: View {
             } else if selectedCategory ==  "전체" || selectedCategory == "" {
                 ForEach(workCycleList) { input in
                     Text(input.name!)
-                        .frame(maxWidth: .infinity, alignment: .center)
                 }.onDelete { indexSet in
                     deleteWorkCycle(offsets: indexSet)
                 }
             } else {
                 FilteredList(filter: selectedCategory)
+                    .frame(height: 300)
             }
         }
         .listStyle(.plain)
@@ -122,24 +122,6 @@ struct HomeView: View {
                 }
             }
         }
-        //        List {
-        //            if workCycleList.isEmpty {
-        //                ContentUnavailableView(label: {
-        //                    Label("No Workout Schedule", systemImage: "gym.bag")
-        //                })
-        //            } else {
-        //                ForEach(workCycleList) { input in
-        //                    HStack {
-        //                        Text(input.name!)
-        //                        Text(input.type!)
-        //                    }
-        //
-        //                }.onDelete { indexSet in
-        //                    deleteWorkCycle(offsets: indexSet)
-        //                }
-        //            }
-        //        }
-
     }
 
     func deleteWorkCycle(offsets: IndexSet) {
@@ -152,14 +134,16 @@ struct HomeView: View {
 
     var TodayWorkoutListView: some View {
         HStack {
-            Rectangle()
-                .frame(height: 50)
-                .foregroundColor(.yellow)
-                .cornerRadius(30)
-                .padding()
-                .overlay {
-                    Text("Today is Back Day")
-                }
+            NavigationLink(destination: AddWorkoutListView()) {
+                Rectangle()
+                    .frame(height: 50)
+                    .foregroundColor(.yellow)
+                    .cornerRadius(30)
+                    .padding()
+                    .overlay {
+                        Text("Today is Back Day")
+                    }
+            }
         }
     }
 }

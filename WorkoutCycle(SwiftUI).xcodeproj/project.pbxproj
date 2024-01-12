@@ -22,6 +22,7 @@
 		5D8A4F5B2B2B02A500C755A0 /* CalendarTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D8A4F5A2B2B02A500C755A0 /* CalendarTabView.swift */; };
 		5D8A4F5D2B2B036E00C755A0 /* RecordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D8A4F5C2B2B036E00C755A0 /* RecordView.swift */; };
 		5D8A4F5F2B2C336300C755A0 /* AddListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D8A4F5E2B2C336300C755A0 /* AddListView.swift */; };
+		5D9BC3B82B50F914004F4F25 /* AddWorkoutListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D9BC3B72B50F914004F4F25 /* AddWorkoutListView.swift */; };
 		5DDF06F12B47E4ED00B1ACE3 /* RecordManger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DDF06F02B47E4ED00B1ACE3 /* RecordManger.swift */; };
 		5DE0E3522B1735E700A2C701 /* WorkoutCycle_SwiftUI_App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DE0E3512B1735E700A2C701 /* WorkoutCycle_SwiftUI_App.swift */; };
 		5DE0E3542B1735E700A2C701 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DE0E3532B1735E700A2C701 /* ContentView.swift */; };
@@ -45,6 +46,7 @@
 		5D8A4F5A2B2B02A500C755A0 /* CalendarTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarTabView.swift; sourceTree = "<group>"; };
 		5D8A4F5C2B2B036E00C755A0 /* RecordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordView.swift; sourceTree = "<group>"; };
 		5D8A4F5E2B2C336300C755A0 /* AddListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddListView.swift; sourceTree = "<group>"; };
+		5D9BC3B72B50F914004F4F25 /* AddWorkoutListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddWorkoutListView.swift; sourceTree = "<group>"; };
 		5DDF06F02B47E4ED00B1ACE3 /* RecordManger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordManger.swift; sourceTree = "<group>"; };
 		5DE0E34E2B1735E700A2C701 /* WorkoutCycle(SwiftUI).app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "WorkoutCycle(SwiftUI).app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5DE0E3512B1735E700A2C701 /* WorkoutCycle_SwiftUI_App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutCycle_SwiftUI_App.swift; sourceTree = "<group>"; };
@@ -70,6 +72,7 @@
 				5D8A4F582B2B016900C755A0 /* HomeView.swift */,
 				5D0660CF2B46A0E5006B19A6 /* FilteredList.swift */,
 				5D8A4F5E2B2C336300C755A0 /* AddListView.swift */,
+				5D9BC3B72B50F914004F4F25 /* AddWorkoutListView.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -267,6 +270,7 @@
 				5D8A4F5D2B2B036E00C755A0 /* RecordView.swift in Sources */,
 				5D8A4F4F2B26DA8400C755A0 /* WorkOutModel.swift in Sources */,
 				5DE0E3542B1735E700A2C701 /* ContentView.swift in Sources */,
+				5D9BC3B82B50F914004F4F25 /* AddWorkoutListView.swift in Sources */,
 				5D394E1C2B45597A0005559A /* WorkoutCycleManger.swift in Sources */,
 				5D8A4F5B2B2B02A500C755A0 /* CalendarTabView.swift in Sources */,
 				5D8A4F592B2B016900C755A0 /* HomeView.swift in Sources */,
