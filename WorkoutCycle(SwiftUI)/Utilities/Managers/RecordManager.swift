@@ -20,6 +20,7 @@ class RecordManger: BaseManager {
     }
 
     func addRecord(content: String, recordDate: Date, context: NSManagedObjectContext) {
+        
         let newRecord = TodayWorkoutMemoEntity(context: context)
 
         newRecord.content = content
@@ -27,7 +28,6 @@ class RecordManger: BaseManager {
     }
 
     func editRecord(oldMemo: TodayWorkoutMemoEntity, content: String, recordDate: Date, context: NSManagedObjectContext) {
-
 
         oldMemo.content = content
         oldMemo.recordDate = Date()
