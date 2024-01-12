@@ -20,7 +20,7 @@ struct AddMemoView: View {
                 Text("2024년 1월 5일 운동 일지")
                     .toolbar {
                         Button(action: {
-                            RecordManger().addRecord(content: content, recordDate: Date(), context: managedObjContext)
+                            RecordManager().addRecord(content: content, recordDate: Date(), context: managedObjContext)
                             dismiss()
                         }, label: {
                             Text("Save")

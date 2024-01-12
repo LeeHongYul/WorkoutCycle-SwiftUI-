@@ -15,6 +15,7 @@ struct AddListView: View {
     @State private var title = ""
     @State private var type = ""
     @State private var typePicker = ""
+    @State private var history = ""
 
     var body: some View {
         NavigationView {
@@ -31,7 +32,7 @@ struct AddListView: View {
                     TextField("Name", text: $title)
                     TextField("Type", text: $type)
                     Button {
-                        WorkoutCycleManger().addWorkCycle(name: title, type: typePicker, context: managedObjContext)
+                        WorkoutCycleManger().addWorkCycle(name: title, type: typePicker, history: history, context: managedObjContext)
                         dismiss()
                     } label: {
                         Text("Sumbit")

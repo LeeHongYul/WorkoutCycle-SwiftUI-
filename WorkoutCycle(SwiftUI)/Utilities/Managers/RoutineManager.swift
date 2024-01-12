@@ -8,7 +8,7 @@
 import Foundation
 import CoreData
 
-class RoutineManger: BaseManager {
+class RoutineManager: BaseManager {
     func saveRoutine(context: NSManagedObjectContext) {
         do {
             try context.save()

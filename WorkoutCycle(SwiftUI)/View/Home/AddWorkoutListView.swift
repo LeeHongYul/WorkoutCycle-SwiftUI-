@@ -16,6 +16,8 @@ struct AddWorkoutListView: View {
     var body: some View {
         NavigationView {
             Form {
+                
+
 
                 Section(header: Text("New Workout")) {
                     Picker("Pick a Type", selection: $typePicker) {
@@ -92,9 +94,9 @@ struct AddWorkoutListView: View {
                     .padding()
                 TextField("Second Textfield", text: $textField2)
                     .padding()
-                TextField("Second Textfield", text: $textField3)
+                TextField("Third Textfield", text: $textField3)
                     .padding()
-                TextField("Second Textfield", text: $textField4)
+                TextField("Four Textfield", text: $textField4)
                     .padding()
             }
         }
@@ -113,11 +115,11 @@ struct AddWorkoutListView: View {
                     .padding()
                 TextField("Second Textfield", text: $textField2)
                     .padding()
-                TextField("Second Textfield", text: $textField3)
+                TextField("Third Textfield", text: $textField3)
                     .padding()
-                TextField("Second Textfield", text: $textField4)
+                TextField("Four Textfield", text: $textField4)
                     .padding()
-                TextField("Second Textfield", text: $textField5)
+                TextField("Five Textfield", text: $textField5)
                     .padding()
             }
         }

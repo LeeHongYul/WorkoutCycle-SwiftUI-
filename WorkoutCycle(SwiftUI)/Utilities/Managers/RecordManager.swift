@@ -8,7 +8,7 @@
 import Foundation
 import CoreData
 
-class RecordManger: BaseManager {
+class RecordManager: BaseManager {
 
     func saveRecord(context: NSManagedObjectContext) {
         do {

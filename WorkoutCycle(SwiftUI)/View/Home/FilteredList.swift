@@ -11,11 +11,26 @@ struct FilteredList: View {
 
     @FetchRequest var fetchRequest: FetchedResults<WorkCycleEntity>
 
+    @Environment(\.managedObjectContext) var managedObjContext
+
+    @FetchRequest(sortDescriptors: []) var workCycleList: FetchedResults<WorkCycleEntity>
+
     var body: some View {
-        List(fetchRequest, id: \.self) { item in
+        ForEach(fetchRequest, id: \.self) { item in
+            NavigationLink(destination: HistoryView(passData: item.name ?? "")) {
                 Text("\(item.name ?? "nil")")
+            }
+        }.onDelete { indexSet in
+            deleteWorkCycle(offsets: indexSet)
         }
-        .listStyle(.plain)
+    }
+
+    func deleteWorkCycle(offsets: IndexSet) {
+        withAnimation {
+            offsets.map { workCycleList[$0] }.forEach(managedObjContext.delete)
+
+            WorkoutCycleManger().saveWorkCycle(context: managedObjContext)
+        }
     }
 
     init(filter: String) {

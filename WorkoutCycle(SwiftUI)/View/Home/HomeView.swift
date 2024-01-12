@@ -10,8 +10,10 @@ import CoreData
 
 struct HomeView: View {
     @State var selectedCategory = ""
+    @State private var passData: String?
 
     @Environment(\.managedObjectContext) var managedObjContext
+    
     @FetchRequest(sortDescriptors: []) var workCycleList: FetchedResults<WorkCycleEntity>
 
     var body: some View {
@@ -86,13 +88,14 @@ struct HomeView: View {
                 })
             } else if selectedCategory ==  "전체" || selectedCategory == "" {
                 ForEach(workCycleList) { input in
-                    Text(input.name!)
+                    NavigationLink(destination: HistoryView(passData: input.name ?? "")) {
+                        Text(input.name!)
+                    }
                 }.onDelete { indexSet in
                     deleteWorkCycle(offsets: indexSet)
                 }
             } else {
-                FilteredList(filter: selectedCategory)
-                    .frame(height: 300)
+                    FilteredList(filter: selectedCategory)
             }
         }
         .listStyle(.plain)
@@ -102,7 +105,7 @@ struct HomeView: View {
         HStack {
             if workCycleList.isEmpty {
                 ContentUnavailableView(label: {
-                    Label("No Workout Schedule", systemImage: "gym.bag")
+                    Label("No Routine", systemImage: "gym.bag")
                 })
             } else {
                 ScrollView(.horizontal, showsIndicators: false) {
