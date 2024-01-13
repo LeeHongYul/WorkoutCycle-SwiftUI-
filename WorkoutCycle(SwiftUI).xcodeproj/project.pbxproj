@@ -120,8 +120,8 @@
 		5D394E192B4556660005559A /* Managers */ = {
 			isa = PBXGroup;
 			children = (
-				5D394E1B2B45597A0005559A /* WorkoutCycleManger.swift */,
 				5D0660CB2B455CA5006B19A6 /* BaseManager.swift */,
+				5D394E1B2B45597A0005559A /* WorkoutCycleManger.swift */,
 				5DDF06F02B47E4ED00B1ACE3 /* RecordManager.swift */,
 				5D9BC3BB2B5122E0004F4F25 /* RoutineManager.swift */,
 			);

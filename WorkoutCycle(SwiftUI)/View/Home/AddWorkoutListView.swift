@@ -8,7 +8,11 @@
 import SwiftUI
 
 struct AddWorkoutListView: View {
-    @State private var typePicker: String = "2분할"
+
+    @Environment(\.managedObjectContext) var managedObjContext
+    @Environment(\.dismiss) var dismiss
+
+    @State private var typePicker: String = ""
 
     @State private var title = ""
     @State private var type = ""
@@ -17,8 +21,6 @@ struct AddWorkoutListView: View {
         NavigationView {
             Form {
                 
-
-
                 Section(header: Text("New Workout")) {
                     Picker("Pick a Type", selection: $typePicker) {
                         ForEach(cycleList, id: \.self) {
@@ -28,6 +30,8 @@ struct AddWorkoutListView: View {
                     .pickerStyle(.menu)
 
                     switch typePicker {
+                    case "분할을 선택해주세요":
+                        Text("분할을 선택해주세요")
                     case "2분할":
                         TwoTextFieldView()
                     case "3분할":
@@ -37,7 +41,7 @@ struct AddWorkoutListView: View {
                     case "5분할":
                         FiveTextFieldView()
                     default:
-                        Text("Invalid selection")
+                        Text("분할을 선택해주세요")
                     }
 
                     Button {
