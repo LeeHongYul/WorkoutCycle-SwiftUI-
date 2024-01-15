@@ -7,10 +7,22 @@
 
 import SwiftUI
 
+struct DynamicTextField {
+    var textField1: String = ""
+    var textField2: String = ""
+    var textField3: String = ""
+    var textField4: String = ""
+    var textField5: String = ""
+}
+
+
 struct AddWorkoutListView: View {
 
     @Environment(\.managedObjectContext) var managedObjContext
     @Environment(\.dismiss) var dismiss
+
+    @FetchRequest(sortDescriptors: []) var recordHistoryList: FetchedResults<RoutineEntity>
+
 
     @State private var typePicker: String = ""
 
@@ -20,7 +32,7 @@ struct AddWorkoutListView: View {
     var body: some View {
         NavigationView {
             Form {
-                
+
                 Section(header: Text("New Workout")) {
                     Picker("Pick a Type", selection: $typePicker) {
                         ForEach(cycleList, id: \.self) {
@@ -28,7 +40,9 @@ struct AddWorkoutListView: View {
                         }
                     }
                     .pickerStyle(.menu)
+                }
 
+                Section(header: Text("Select My Routine")) {
                     switch typePicker {
                     case "분할을 선택해주세요":
                         Text("분할을 선택해주세요")
@@ -43,11 +57,12 @@ struct AddWorkoutListView: View {
                     default:
                         Text("분할을 선택해주세요")
                     }
+                }
 
-                    Button {
-
-                    } label: {
-                        Text("Sumbit")
+                Section {
+                    Button("저장") {
+                        print("a")
+                        dismiss()
                     }
                 }
             }
@@ -56,75 +71,108 @@ struct AddWorkoutListView: View {
     }
 
     struct TwoTextFieldView: View {
-        @State private var textField1: String = ""
-        @State private var textField2: String = ""
+        @State private var manyTextField = DynamicTextField()
 
         var body: some View {
             VStack {
-                TextField("First Textfield", text: $textField1)
-                    .padding()
-                TextField("Second Textfield", text: $textField2)
-                    .padding()
+                Picker("First Textfield", selection: $manyTextField.textField1) {
+                    ForEach(addWorkCycleList, id: \.self) {
+                        Text($0)
+                    }
+                }
+                Picker( "Second Textfield", selection: $manyTextField.textField2) {
+                    ForEach(addWorkCycleList, id: \.self) {
+                        Text($0)
+                    }
+                }
             }
         }
     }
 
     struct ThreeTextFieldView: View {
-        @State private var textField1: String = ""
-        @State private var textField2: String = ""
-        @State private var textField3: String = ""
+        @State private var manyTextField = DynamicTextField()
 
         var body: some View {
             VStack {
-                TextField("First Textfield", text: $textField1)
-                    .padding()
-                TextField("Second Textfield", text: $textField2)
-                    .padding()
-                TextField("Second Textfield", text: $textField3)
-                    .padding()
+                Picker("First Textfield", selection: $manyTextField.textField1) {
+                    ForEach(addWorkCycleList, id: \.self) {
+                        Text($0)
+                    }
+                }
+                Picker( "Second Textfield", selection: $manyTextField.textField2) {
+                    ForEach(addWorkCycleList, id: \.self) {
+                        Text($0)
+                    }
+                }
+                Picker("First Textfield", selection: $manyTextField.textField3) {
+                    ForEach(addWorkCycleList, id: \.self) {
+                        Text($0)
+                    }
+                }
             }
         }
     }
 
     struct FourTextFieldView: View {
-        @State private var textField1: String = ""
-        @State private var textField2: String = ""
-        @State private var textField3: String = ""
-        @State private var textField4: String = ""
+        @State private var manyTextField = DynamicTextField()
 
         var body: some View {
             VStack {
-                TextField("First Textfield", text: $textField1)
-                    .padding()
-                TextField("Second Textfield", text: $textField2)
-                    .padding()
-                TextField("Third Textfield", text: $textField3)
-                    .padding()
-                TextField("Four Textfield", text: $textField4)
-                    .padding()
+                Picker("First Textfield", selection: $manyTextField.textField1) {
+                    ForEach(addWorkCycleList, id: \.self) {
+                        Text($0)
+                    }
+                }
+                Picker("First Textfield", selection: $manyTextField.textField2) {
+                    ForEach(addWorkCycleList, id: \.self) {
+                        Text($0)
+                    }
+                }
+                Picker("First Textfield", selection: $manyTextField.textField3) {
+                    ForEach(addWorkCycleList, id: \.self) {
+                        Text($0)
+                    }
+                }
+                Picker("First Textfield", selection: $manyTextField.textField4) {
+                    ForEach(addWorkCycleList, id: \.self) {
+                        Text($0)
+                    }
+                }
             }
         }
     }
 
     struct FiveTextFieldView: View {
-        @State private var textField1: String = ""
-        @State private var textField2: String = ""
-        @State private var textField3: String = ""
-        @State private var textField4: String = ""
-        @State private var textField5: String = ""
 
+        @State private var manyTextField = DynamicTextField()
+        
         var body: some View {
             VStack {
-                TextField("First Textfield", text: $textField1)
-                    .padding()
-                TextField("Second Textfield", text: $textField2)
-                    .padding()
-                TextField("Third Textfield", text: $textField3)
-                    .padding()
-                TextField("Four Textfield", text: $textField4)
-                    .padding()
-                TextField("Five Textfield", text: $textField5)
-                    .padding()
+                Picker("First Textfield", selection: $manyTextField.textField1) {
+                    ForEach(addWorkCycleList, id: \.self) {
+                        Text($0)
+                    }
+                }
+                Picker("First Textfield", selection: $manyTextField.textField2) {
+                    ForEach(addWorkCycleList, id: \.self) {
+                        Text($0)
+                    }
+                }
+                Picker("First Textfield", selection: $manyTextField.textField3) {
+                    ForEach(addWorkCycleList, id: \.self) {
+                        Text($0)
+                    }
+                }
+                Picker("First Textfield", selection: $manyTextField.textField4) {
+                    ForEach(addWorkCycleList, id: \.self) {
+                        Text($0)
+                    }
+                }
+                Picker("First Textfield", selection: $manyTextField.textField5) {
+                    ForEach(addWorkCycleList, id: \.self) {
+                        Text($0)
+                    }
+                }
             }
         }
     }

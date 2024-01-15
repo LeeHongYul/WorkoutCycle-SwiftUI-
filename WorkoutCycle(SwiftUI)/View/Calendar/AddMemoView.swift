@@ -28,7 +28,7 @@ struct AddMemoView: View {
                     }
 
                 TextField("Content", text: $content, axis: .vertical)
-                    .lineLimit(30, reservesSpace: true)
+                    .lineLimit(10, reservesSpace: true)
                     .textFieldStyle(.roundedBorder)
                     .padding()
             }

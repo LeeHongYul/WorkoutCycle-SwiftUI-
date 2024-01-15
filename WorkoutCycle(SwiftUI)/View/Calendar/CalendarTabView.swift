@@ -20,19 +20,20 @@ struct CalendarTabView: View {
         NavigationView {
             VStack {
                 CalendarView(isAddMemoViewActive: $isAddMemoViewActive, interval: DateInterval(start: .distantPast, end: .distantFuture))
-
+                
                 RecordListView
             }
+
             .navigationTitle("Calendar View")
             .sheet(isPresented: $isAddMemoViewActive) {
                             AddMemoView()
-                        }
+            }
         }
     }
 
     var RecordListView: some View {
 
-        List {
+        Form {
             ForEach(recordMemoList) { memo in
                 Text(memo.content!)
             }

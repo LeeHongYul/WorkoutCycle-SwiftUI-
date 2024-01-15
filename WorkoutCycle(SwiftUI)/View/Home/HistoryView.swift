@@ -25,11 +25,12 @@ struct HistoryView: View {
                 Form {
                     Section(header: Text("\(passData) 기록")) {
                         TextField("Enter History of Workout", text: $history)
-                        Button {
+                    }
+
+                    Section {
+                        Button("Sumbit") {
                             RoutineManager().addRoutine(typeWorkout: passData,routine: history, context: managedObjContext)
                             dismiss()
-                        } label: {
-                            Text("Sumbit")
                         }
                     }
 

@@ -13,14 +13,13 @@
 		5D394E132B4548370005559A /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D394E122B4548370005559A /* CalendarView.swift */; };
 		5D394E1C2B45597A0005559A /* WorkoutCycleManger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D394E1B2B45597A0005559A /* WorkoutCycleManger.swift */; };
 		5D394E1F2B455B980005559A /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5D394E1D2B455B980005559A /* Model.xcdatamodeld */; };
-		5D8A4F4D2B26DA4700C755A0 /* PickWorkoutListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D8A4F4C2B26DA4700C755A0 /* PickWorkoutListView.swift */; };
+		5D64764B2B551EBD00E3DA67 /* DietView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D64764A2B551EBD00E3DA67 /* DietView.swift */; };
+		5D64764D2B551EFC00E3DA67 /* DietManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D64764C2B551EFC00E3DA67 /* DietManager.swift */; };
 		5D8A4F4F2B26DA8400C755A0 /* WorkOutModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D8A4F4E2B26DA8400C755A0 /* WorkOutModel.swift */; };
 		5D8A4F512B26E2F100C755A0 /* PickWorkoutListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D8A4F502B26E2F100C755A0 /* PickWorkoutListCell.swift */; };
 		5D8A4F552B2702A300C755A0 /* DetailWorkoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D8A4F542B2702A300C755A0 /* DetailWorkoutView.swift */; };
-		5D8A4F572B2719D000C755A0 /* StartWorkoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D8A4F562B2719D000C755A0 /* StartWorkoutView.swift */; };
 		5D8A4F592B2B016900C755A0 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D8A4F582B2B016900C755A0 /* HomeView.swift */; };
 		5D8A4F5B2B2B02A500C755A0 /* CalendarTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D8A4F5A2B2B02A500C755A0 /* CalendarTabView.swift */; };
-		5D8A4F5D2B2B036E00C755A0 /* RecordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D8A4F5C2B2B036E00C755A0 /* RecordView.swift */; };
 		5D8A4F5F2B2C336300C755A0 /* AddListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D8A4F5E2B2C336300C755A0 /* AddListView.swift */; };
 		5D9BC3B82B50F914004F4F25 /* AddWorkoutListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D9BC3B72B50F914004F4F25 /* AddWorkoutListView.swift */; };
 		5D9BC3BA2B51213A004F4F25 /* HistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D9BC3B92B51213A004F4F25 /* HistoryView.swift */; };
@@ -39,14 +38,13 @@
 		5D394E122B4548370005559A /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
 		5D394E1B2B45597A0005559A /* WorkoutCycleManger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutCycleManger.swift; sourceTree = "<group>"; };
 		5D394E1E2B455B980005559A /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
-		5D8A4F4C2B26DA4700C755A0 /* PickWorkoutListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickWorkoutListView.swift; sourceTree = "<group>"; };
+		5D64764A2B551EBD00E3DA67 /* DietView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DietView.swift; sourceTree = "<group>"; };
+		5D64764C2B551EFC00E3DA67 /* DietManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DietManager.swift; sourceTree = "<group>"; };
 		5D8A4F4E2B26DA8400C755A0 /* WorkOutModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkOutModel.swift; sourceTree = "<group>"; };
 		5D8A4F502B26E2F100C755A0 /* PickWorkoutListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickWorkoutListCell.swift; sourceTree = "<group>"; };
 		5D8A4F542B2702A300C755A0 /* DetailWorkoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailWorkoutView.swift; sourceTree = "<group>"; };
-		5D8A4F562B2719D000C755A0 /* StartWorkoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartWorkoutView.swift; sourceTree = "<group>"; };
 		5D8A4F582B2B016900C755A0 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		5D8A4F5A2B2B02A500C755A0 /* CalendarTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarTabView.swift; sourceTree = "<group>"; };
-		5D8A4F5C2B2B036E00C755A0 /* RecordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordView.swift; sourceTree = "<group>"; };
 		5D8A4F5E2B2C336300C755A0 /* AddListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddListView.swift; sourceTree = "<group>"; };
 		5D9BC3B72B50F914004F4F25 /* AddWorkoutListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddWorkoutListView.swift; sourceTree = "<group>"; };
 		5D9BC3B92B51213A004F4F25 /* HistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryView.swift; sourceTree = "<group>"; };
@@ -92,12 +90,12 @@
 			path = Calendar;
 			sourceTree = "<group>";
 		};
-		5D394E162B4553BB0005559A /* Record */ = {
+		5D394E162B4553BB0005559A /* Diet */ = {
 			isa = PBXGroup;
 			children = (
-				5D8A4F5C2B2B036E00C755A0 /* RecordView.swift */,
+				5D64764A2B551EBD00E3DA67 /* DietView.swift */,
 			);
-			path = Record;
+			path = Diet;
 			sourceTree = "<group>";
 		};
 		5D394E172B4556410005559A /* Utilities */ = {
@@ -124,6 +122,7 @@
 				5D394E1B2B45597A0005559A /* WorkoutCycleManger.swift */,
 				5DDF06F02B47E4ED00B1ACE3 /* RecordManager.swift */,
 				5D9BC3BB2B5122E0004F4F25 /* RoutineManager.swift */,
+				5D64764C2B551EFC00E3DA67 /* DietManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -139,10 +138,9 @@
 			isa = PBXGroup;
 			children = (
 				5DE0E3532B1735E700A2C701 /* ContentView.swift */,
-				5D394E162B4553BB0005559A /* Record */,
+				5D394E162B4553BB0005559A /* Diet */,
 				5D394E152B4553B30005559A /* Calendar */,
 				5D394E142B4553AA0005559A /* Home */,
-				5D8A4F4C2B26DA4700C755A0 /* PickWorkoutListView.swift */,
 				5D8A4F542B2702A300C755A0 /* DetailWorkoutView.swift */,
 			);
 			path = View;
@@ -183,7 +181,6 @@
 				5DE0E3572B1735E800A2C701 /* Preview Content */,
 				5D8A4F502B26E2F100C755A0 /* PickWorkoutListCell.swift */,
 				5D394E1D2B455B980005559A /* Model.xcdatamodeld */,
-				5D8A4F562B2719D000C755A0 /* StartWorkoutView.swift */,
 			);
 			path = "WorkoutCycle(SwiftUI)";
 			sourceTree = "<group>";
@@ -268,18 +265,17 @@
 			files = (
 				5DDF06F12B47E4ED00B1ACE3 /* RecordManager.swift in Sources */,
 				5D0660CC2B455CA5006B19A6 /* BaseManager.swift in Sources */,
-				5D8A4F4D2B26DA4700C755A0 /* PickWorkoutListView.swift in Sources */,
 				5D8A4F512B26E2F100C755A0 /* PickWorkoutListCell.swift in Sources */,
 				5D394E132B4548370005559A /* CalendarView.swift in Sources */,
 				5D394E1F2B455B980005559A /* Model.xcdatamodeld in Sources */,
-				5D8A4F572B2719D000C755A0 /* StartWorkoutView.swift in Sources */,
-				5D8A4F5D2B2B036E00C755A0 /* RecordView.swift in Sources */,
 				5D8A4F4F2B26DA8400C755A0 /* WorkOutModel.swift in Sources */,
 				5DE0E3542B1735E700A2C701 /* ContentView.swift in Sources */,
 				5D9BC3BC2B5122E0004F4F25 /* RoutineManager.swift in Sources */,
 				5D9BC3B82B50F914004F4F25 /* AddWorkoutListView.swift in Sources */,
+				5D64764B2B551EBD00E3DA67 /* DietView.swift in Sources */,
 				5D394E1C2B45597A0005559A /* WorkoutCycleManger.swift in Sources */,
 				5D8A4F5B2B2B02A500C755A0 /* CalendarTabView.swift in Sources */,
+				5D64764D2B551EFC00E3DA67 /* DietManager.swift in Sources */,
 				5D8A4F592B2B016900C755A0 /* HomeView.swift in Sources */,
 				5DE0E3522B1735E700A2C701 /* WorkoutCycle_SwiftUI_App.swift in Sources */,
 				5D8A4F552B2702A300C755A0 /* DetailWorkoutView.swift in Sources */,

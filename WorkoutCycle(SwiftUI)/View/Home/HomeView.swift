@@ -127,14 +127,6 @@ struct HomeView: View {
         }
     }
 
-    func deleteWorkCycle(offsets: IndexSet) {
-        withAnimation {
-            offsets.map { workCycleList[$0] }.forEach(managedObjContext.delete)
-
-            WorkoutCycleManger().saveWorkCycle(context: managedObjContext)
-        }
-    }
-
     var TodayWorkoutListView: some View {
         HStack {
             NavigationLink(destination: AddWorkoutListView()) {
@@ -146,7 +138,16 @@ struct HomeView: View {
                     .overlay {
                         Text("Today is Back Day")
                     }
+
             }
+        }
+    }
+
+    func deleteWorkCycle(offsets: IndexSet) {
+        withAnimation {
+            offsets.map { workCycleList[$0] }.forEach(managedObjContext.delete)
+
+            WorkoutCycleManger().saveWorkCycle(context: managedObjContext)
         }
     }
 }
@@ -154,3 +155,4 @@ struct HomeView: View {
 #Preview {
     HomeView()
 }
+
