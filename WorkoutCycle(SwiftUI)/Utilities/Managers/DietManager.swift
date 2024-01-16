@@ -18,9 +18,10 @@ class DietManager: BaseManager {
         }
     }
 
-    func addDiet(name: String, kcal: Int16, context: NSManagedObjectContext) {
+    func addDiet(dietType: String, name: String, kcal: Int16, context: NSManagedObjectContext) {
         let newDiet = FoodEntity(context: context)
 
+        newDiet.dietType = dietType
         newDiet.name = name
         newDiet.kcal = kcal
 

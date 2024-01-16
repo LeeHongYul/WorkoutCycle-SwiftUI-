@@ -51,7 +51,8 @@ struct DietView: View {
 
                     Section {
                         Button("저장") {
-                            DietManager().addDiet(name: mealText, kcal: Int16(kcalText)!, context: managedObjContext)
+                            print(selectedMealType.rawValue)
+                            DietManager().addDiet(dietType: selectedMealType.rawValue, name: mealText, kcal: Int16(kcalText)!, context: managedObjContext)
                         }
                     }
                 }
@@ -65,7 +66,7 @@ struct DietView: View {
 
         Form {
             ForEach(dietList) { diet in
-                Text(diet.name! + String(diet.kcal))
+                Text((diet.dietType ?? "a") + diet.name! + String(diet.kcal))
             }
         }
         .listStyle(.plain)
