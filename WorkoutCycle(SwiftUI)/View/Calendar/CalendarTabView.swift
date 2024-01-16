@@ -13,14 +13,14 @@ struct CalendarTabView: View {
     
     @Environment(\.managedObjectContext) var managedObjContext
 
-    @FetchRequest(sortDescriptors: []) var recordMemoList: FetchedResults<TodayWorkoutMemoEntity>
+    @FetchRequest(sortDescriptors: []) var recordMemoList: FetchedResults<TodayMemoEntity>
 
     var body: some View {
 
         NavigationView {
             VStack {
                 CalendarView(isAddMemoViewActive: $isAddMemoViewActive, interval: DateInterval(start: .distantPast, end: .distantFuture))
-                
+
                 RecordListView
             }
 

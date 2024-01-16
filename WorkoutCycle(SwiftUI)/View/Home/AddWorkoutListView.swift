@@ -21,7 +21,7 @@ struct AddWorkoutListView: View {
     @Environment(\.managedObjectContext) var managedObjContext
     @Environment(\.dismiss) var dismiss
 
-    @FetchRequest(sortDescriptors: []) var recordHistoryList: FetchedResults<RoutineEntity>
+    @FetchRequest(sortDescriptors: []) var recordHistoryList: FetchedResults<HistoryEntity>
 
 
     @State private var typePicker: String = ""

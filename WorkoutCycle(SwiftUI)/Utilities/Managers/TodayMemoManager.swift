@@ -8,7 +8,7 @@
 import Foundation
 import CoreData
 
-class RecordManager: BaseManager {
+class TodayMemoManager: BaseManager {
 
     func saveRecord(context: NSManagedObjectContext) {
         do {
@@ -21,13 +21,13 @@ class RecordManager: BaseManager {
 
     func addRecord(content: String, recordDate: Date, context: NSManagedObjectContext) {
         
-        let newRecord = TodayWorkoutMemoEntity(context: context)
+        let newRecord = TodayMemoEntity(context: context)
 
         newRecord.content = content
         newRecord.recordDate = Date()
     }
 
-    func editRecord(oldMemo: TodayWorkoutMemoEntity, content: String, recordDate: Date, context: NSManagedObjectContext) {
+    func editRecord(oldMemo: TodayMemoEntity, content: String, recordDate: Date, context: NSManagedObjectContext) {
 
         oldMemo.content = content
         oldMemo.recordDate = Date()

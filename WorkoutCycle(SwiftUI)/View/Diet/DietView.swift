@@ -17,7 +17,7 @@ struct DietView: View {
 
     @Environment(\.managedObjectContext) var managedObjContext
 
-    @FetchRequest(sortDescriptors: []) var dietList: FetchedResults<FoodEntity>
+    @FetchRequest(sortDescriptors: []) var dietList: FetchedResults<DietEntity>
     @Environment(\.dismiss) var dismiss
 
     @State private var selectedMealType: MealType = .breakfast

@@ -8,7 +8,7 @@
 import Foundation
 import CoreData
 
-class RoutineManager: BaseManager {
+class HistoryManager: BaseManager {
     func saveRoutine(context: NSManagedObjectContext) {
         do {
             try context.save()
@@ -19,7 +19,7 @@ class RoutineManager: BaseManager {
     }
 
     func addRoutine(typeWorkout: String, routine: String, context: NSManagedObjectContext) {
-        let routineCycle = RoutineEntity(context: context)
+        let routineCycle = HistoryEntity(context: context)
 
         routineCycle.typeWorkout = typeWorkout
         routineCycle.routine = routine
@@ -28,7 +28,7 @@ class RoutineManager: BaseManager {
         saveRoutine(context: context)
     }
 
-    func editRoutine(routineCycle: RoutineEntity, typeWorkout: String, routine: String, context: NSManagedObjectContext) {
+    func editRoutine(routineCycle: HistoryEntity, typeWorkout: String, routine: String, context: NSManagedObjectContext) {
         routineCycle.typeWorkout = typeWorkout
         routineCycle.routine = routine
 

@@ -17,7 +17,7 @@ struct HistoryView: View {
     @State private var history = ""
 //    @State private var typeWorkout = ""
 
-    @FetchRequest(sortDescriptors: []) var recordHistoryList: FetchedResults<RoutineEntity>
+    @FetchRequest(sortDescriptors: []) var recordHistoryList: FetchedResults<HistoryEntity>
 
     var body: some View {
         NavigationView {
@@ -29,7 +29,7 @@ struct HistoryView: View {
 
                     Section {
                         Button("Sumbit") {
-                            RoutineManager().addRoutine(typeWorkout: passData,routine: history, context: managedObjContext)
+                            HistoryManager().addRoutine(typeWorkout: passData,routine: history, context: managedObjContext)
                             dismiss()
                         }
                     }

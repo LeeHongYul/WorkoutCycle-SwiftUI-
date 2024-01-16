@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="22225" systemVersion="23A344" minimumToolsVersion="Automatic" sourceLanguage="Swift" usedWithSwiftData="YES" userDefinedModelVersionIdentifier="">
-    <entity name="Food" representedClassName="FoodEntity" syncable="YES" codeGenerationType="class">
+    <entity name="Diet" representedClassName="DietEntity" syncable="YES" codeGenerationType="class">
         <attribute name="dietType" optional="YES" attributeType="String"/>
         <attribute name="kcal" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="name" optional="YES" attributeType="String"/>
     </entity>
-    <entity name="Routine" representedClassName="RoutineEntity" syncable="YES" codeGenerationType="class">
+    <entity name="History" representedClassName="HistoryEntity" syncable="YES" codeGenerationType="class">
         <attribute name="routine" optional="YES" attributeType="String"/>
         <attribute name="typeWorkout" optional="YES" attributeType="String"/>
     </entity>
-    <entity name="TodayWorkoutMemo" representedClassName="TodayWorkoutMemoEntity" syncable="YES" codeGenerationType="class">
+    <entity name="TodayMemo" representedClassName="TodayMemoEntity" syncable="YES" codeGenerationType="class">
         <attribute name="content" optional="YES" attributeType="String"/>
         <attribute name="recordDate" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
     </entity>
