@@ -100,12 +100,11 @@ struct AddWorkoutListView: View {
                     }
                 }
 
-                Text("aaaaaaa")
-                Button(action: {
-                    SplitWorkoutManager().addSplit(name: manyTextField.textField1, context: managedObjContext)
-                    SplitWorkoutManager().addSplit(name: manyTextField.textField2, context: managedObjContext)
-                }) {
-                    Text("저장 돔 하자")
+                Section {
+                    Button("저장") {
+                        SplitWorkoutManager().addSplit(name: manyTextField.textField1, context:managedObjContext)
+                        SplitWorkoutManager().addSplit(name: manyTextField.textField2, context:managedObjContext)
+                    }
                 }
             }
         }

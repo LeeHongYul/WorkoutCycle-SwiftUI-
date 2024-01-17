@@ -49,8 +49,10 @@ struct DietView: View {
 
                     Section {
                         Button("저장") {
-                            print(selectedMealType.rawValue)
-                            DietManager().addDiet(dietType: selectedMealType.rawValue, name: mealText, kcal: Int16(kcalText)!, context: managedObjContext)
+                            DietManager().addDiet(dietType: selectedMealType.rawValue, name: mealText, kcal: Int16(kcalText)!, dateInput: Date(), context: managedObjContext)
+
+                            mealText = ""
+                            kcalText = ""
                         }
                     }
                 }

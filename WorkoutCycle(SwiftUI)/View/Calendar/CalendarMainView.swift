@@ -8,7 +8,7 @@
 import SwiftUI
 
 
-struct CalendarTabView: View {
+struct CalendarMainView: View {
     @State private var isAddMemoViewActive = false
     
     @Environment(\.managedObjectContext) var managedObjContext

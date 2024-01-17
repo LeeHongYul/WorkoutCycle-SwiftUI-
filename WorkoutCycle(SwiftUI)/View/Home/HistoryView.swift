@@ -29,7 +29,7 @@ struct HistoryView: View {
 
                     Section {
                         Button("Sumbit") {
-                            HistoryManager().addRoutine(typeWorkout: passData,routine: history, context: managedObjContext)
+                            HistoryManager().addHistory(typeWorkout: passData,routine: history, dateInput: Date(), context: managedObjContext)
                             dismiss()
                         }
                     }

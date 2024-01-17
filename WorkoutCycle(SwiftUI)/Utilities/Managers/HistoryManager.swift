@@ -9,7 +9,7 @@ import Foundation
 import CoreData
 
 class HistoryManager: BaseManager {
-    func saveRoutine(context: NSManagedObjectContext) {
+    func saveHistory(context: NSManagedObjectContext) {
         do {
             try context.save()
             print("Data Saved")
@@ -18,21 +18,23 @@ class HistoryManager: BaseManager {
         }
     }
 
-    func addRoutine(typeWorkout: String, routine: String, context: NSManagedObjectContext) {
-        let routineCycle = HistoryEntity(context: context)
+    func addHistory(typeWorkout: String, routine: String, dateInput: Date, context: NSManagedObjectContext) {
+        let newHistory = HistoryEntity(context: context)
 
-        routineCycle.typeWorkout = typeWorkout
-        routineCycle.routine = routine
+        newHistory.typeWorkout = typeWorkout
+        newHistory.routine = routine
+        newHistory.dateInput = Date()
 
 
-        saveRoutine(context: context)
+        saveHistory(context: context)
     }
 
-    func editRoutine(routineCycle: HistoryEntity, typeWorkout: String, routine: String, context: NSManagedObjectContext) {
-        routineCycle.typeWorkout = typeWorkout
-        routineCycle.routine = routine
+    func editHistory(oldHistory: HistoryEntity, typeWorkout: String, routine: String, context: NSManagedObjectContext) {
+        
+        oldHistory.typeWorkout = typeWorkout
+        oldHistory.routine = routine
 
 
-        saveRoutine(context: context)
+        saveHistory(context: context)
     }
 }
