@@ -9,12 +9,14 @@
         <attribute name="routine" optional="YES" attributeType="String"/>
         <attribute name="typeWorkout" optional="YES" attributeType="String"/>
     </entity>
+    <entity name="SplitWorkout" representedClassName="SplitWorkoutEntity" syncable="YES" codeGenerationType="class">
+        <attribute name="name" optional="YES" attributeType="String"/>
+    </entity>
     <entity name="TodayMemo" representedClassName="TodayMemoEntity" syncable="YES" codeGenerationType="class">
         <attribute name="content" optional="YES" attributeType="String"/>
         <attribute name="recordDate" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
     </entity>
     <entity name="WorkCycle" representedClassName="WorkCycleEntity" syncable="YES" codeGenerationType="class">
-        <attribute name="history" optional="YES" attributeType="String"/>
         <attribute name="name" attributeType="String"/>
         <attribute name="type" optional="YES" attributeType="String"/>
     </entity>

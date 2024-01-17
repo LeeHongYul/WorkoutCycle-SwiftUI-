@@ -47,8 +47,6 @@ struct DietView: View {
                         TextField("칼로리 입력", text: $kcalText)
                     }
 
-
-
                     Section {
                         Button("저장") {
                             print(selectedMealType.rawValue)
@@ -56,7 +54,6 @@ struct DietView: View {
                         }
                     }
                 }
-
                 DietListView
             }
         }

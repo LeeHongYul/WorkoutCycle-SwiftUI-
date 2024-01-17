@@ -19,20 +19,18 @@ class WorkoutCycleManger: BaseManager {
         }
     }
 
-    func addWorkCycle(name: String, type: String, history: String ,context: NSManagedObjectContext) {
+    func addWorkCycle(name: String, type: String, context: NSManagedObjectContext) {
         let workcycle = WorkCycleEntity(context: context)
 
         workcycle.name = name
         workcycle.type = type
-        workcycle.history = history
 
         saveWorkCycle(context: context)
     }
 
-    func editWorkCycle(workcycle: WorkCycleEntity, name: String, type: String, history: String, context: NSManagedObjectContext) {
+    func editWorkCycle(workcycle: WorkCycleEntity, name: String, type: String, context: NSManagedObjectContext) {
         workcycle.name = name
         workcycle.type = type
-        workcycle.history = history
 
         saveWorkCycle(context: context)
     }
