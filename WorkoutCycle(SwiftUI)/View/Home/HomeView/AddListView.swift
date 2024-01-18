@@ -13,7 +13,6 @@ struct AddListView: View {
     @Environment(\.dismiss) var dismiss
     
     @State private var title = ""
-    @State private var type = ""
     @State private var typePicker = ""
     @State private var history = ""
 
