@@ -33,6 +33,11 @@ struct CalendarView: UIViewRepresentable {
 
     class Coordinator: NSObject, UICalendarViewDelegate, UICalendarSelectionSingleDateDelegate {
 
+        @Environment(\.managedObjectContext) var managedObjContext
+        @Environment(\.dismiss) var dismiss
+
+        @FetchRequest(sortDescriptors: []) var memoList: FetchedResults<TodayMemoEntity>
+
         var parent: CalendarView
 
         init(_ parent: CalendarView) {
@@ -47,6 +52,28 @@ struct CalendarView: UIViewRepresentable {
             print("Calendar Pressed")
             parent.isAddMemoViewActive = true
         }
+
+
+
+
+        func calendarView(_ calendarView: UICalendarView, decorationFor dateComponents: DateComponents) -> UICalendarView.Decoration? {
+
+            // 선택된 날짜에 빨간색 동그라미를 표시하는 예제
+            for item in memoList {
+                    if let selectedDate = item.recordDate,
+                        Calendar.current.isDate(selectedDate, inSameDayAs: dateComponents.date ?? Date()) {
+                        return UICalendarView.Decoration.default(color: .systemGreen, size: .large)
+                    }
+            }
+
+
+
+
+            // 여기에서 다른 조건에 따라 다른 Decoration을 반환할 수 있습니다.
+
+            return nil // Decoration이 필요 없는 경우 nil을 반환합니다.
+        }
+
     }
 }
 

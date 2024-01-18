@@ -35,12 +35,23 @@ struct CalendarMainView: View {
 
         Form {
             ForEach(recordMemoList) { memo in
-                Text(memo.content!)
+                if let recordDate = memo.recordDate?.formattedString(format: "yyyy년 MM월 dd일") {
+                    Text(memo.content! + " " + recordDate)
+                }
             }
         }
         .listStyle(.plain)
     }
 }
+
+extension Date {
+    func formattedString(format: String) -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = format
+        return dateFormatter.string(from: self)
+    }
+}
+
 
 //#Preview {
 //    CalendarTabView()

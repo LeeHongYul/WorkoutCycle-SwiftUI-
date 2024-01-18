@@ -11,10 +11,12 @@ import CoreData
 struct HomeView: View {
     @State var selectedCategory = ""
     @State private var passData: String?
+    @State private var todayWorkout = ""
 
     @Environment(\.managedObjectContext) var managedObjContext
     
     @FetchRequest(sortDescriptors: []) var workCycleList: FetchedResults<WorkCycleEntity>
+    @FetchRequest(sortDescriptors: []) var splitWorkoutList: FetchedResults<SplitWorkoutEntity>
 
     var body: some View {
         NavigationView {
@@ -103,20 +105,22 @@ struct HomeView: View {
 
     var CycleListView: some View {
         HStack {
-            if workCycleList.isEmpty {
+            if splitWorkoutList.isEmpty {
                 ContentUnavailableView(label: {
                     Label("No Routine", systemImage: "gym.bag")
                 })
             } else {
                 ScrollView(.horizontal, showsIndicators: false) {
-                    HStack {
-                        ForEach(workCycleList) { input in
+                    HStack(spacing: 5) {
+                        ForEach(splitWorkoutList) { input in
                             RoundedRectangle(cornerRadius: 10)
                                 .frame(width: 100, height: 60)
                                 .foregroundColor(.gray).opacity(0.2)
                                 .padding()
                                 .overlay(
                                     Text(input.name!)
+                                        .font(.title2)
+                                        .padding()
                                 )
                         }.onDelete { indexSet in
                             deleteWorkCycle(offsets: indexSet)
@@ -136,11 +140,23 @@ struct HomeView: View {
                     .cornerRadius(30)
                     .padding()
                     .overlay {
-                        Text("Today is Back Day")
+                        Text("Today is \(isTodayWorkout()) Day")
                     }
 
             }
         }
+    }
+
+    // 하루마다 바뀌게 구현해야함
+    func isTodayWorkout() -> String {
+        var stack: [String] = []
+
+        for i in 0..<splitWorkoutList.count {
+                if let name = splitWorkoutList[i].name {
+                    stack.append(name)
+                }
+            }
+        return stack.first ?? "No Workout"
     }
 
     func deleteWorkCycle(offsets: IndexSet) {

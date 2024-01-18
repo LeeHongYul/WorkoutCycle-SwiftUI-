@@ -29,7 +29,7 @@ struct DietView: View {
         NavigationView {
             VStack {
                 Form {
-                    Section(header: Text("식사 유형")) {
+                    Section(header: Text("식사")) {
                         Picker("식사 유형", selection: $selectedMealType) {
                             Text("아침").tag(MealType.breakfast)
                             Text("점심").tag(MealType.lunch)
@@ -38,7 +38,7 @@ struct DietView: View {
                         .pickerStyle(SegmentedPickerStyle())
                     }
 
-                    Section(header: Text("식단 입력")) {
+                    Section(header: Text("식단")) {
                         TextField("식단 입력", text: $mealText)
 
                     }
@@ -56,8 +56,11 @@ struct DietView: View {
                         }
                     }
                 }
+                .formStyle(.grouped)
+
                 DietListView
             }
+            .navigationTitle("Diet Record")
         }
     }
 
