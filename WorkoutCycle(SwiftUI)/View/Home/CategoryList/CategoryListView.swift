@@ -20,18 +20,7 @@ struct CategoryListView: View {
                             selectedCategory = item.workPart
                             
                         } label: {
-                            HStack {
-                                Image(item.workImage)
-                                    .resizable()
-                                    .aspectRatio(contentMode: .fit)
-                                    .frame(width: 30, height: 30)
-
-                                Text(item.workPart)
-                            }
-                            .padding(20)
-                            .background(selectedCategory == item.workPart ? .black : .gray.opacity(0.1))
-                            .foregroundColor(selectedCategory != item.workPart ? .black : .white)
-                            .clipShape(Capsule())
+                            CategoryListViewModel(imageTitle: item.workImage, title: item.workPart, bindindValue: selectedCategory)
                         }
                     }
                 }
@@ -40,5 +29,3 @@ struct CategoryListView: View {
         }
     }
 }
-
-

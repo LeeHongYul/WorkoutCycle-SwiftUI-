@@ -19,7 +19,6 @@ struct ContentView: View {
 
             DietView()
                 .tabItem { Image(systemName: "list.clipboard") }
-
         }
     }
 }

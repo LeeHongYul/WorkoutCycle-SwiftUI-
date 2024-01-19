@@ -14,7 +14,6 @@ struct AddListView: View {
     
     @State private var title = ""
     @State private var typePicker = ""
-    @State private var history = ""
 
     var body: some View {
         NavigationView {

@@ -14,6 +14,8 @@
 		5D06BE082B597CC6007C1424 /* MyWorkoutListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D06BE072B597CC6007C1424 /* MyWorkoutListView.swift */; };
 		5D06BE0B2B597D36007C1424 /* CycleListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D06BE0A2B597D36007C1424 /* CycleListView.swift */; };
 		5D06BE0D2B597D86007C1424 /* TodayWorkoutListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D06BE0C2B597D86007C1424 /* TodayWorkoutListView.swift */; };
+		5D06BE112B5A1CA2007C1424 /* CategoryListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D06BE102B5A1CA2007C1424 /* CategoryListViewModel.swift */; };
+		5D06BE152B5A24C5007C1424 /* CategoryContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D06BE142B5A24C5007C1424 /* CategoryContainerView.swift */; };
 		5D1D502F2B5765F800D001B7 /* SplitWorkoutManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D1D502E2B5765F800D001B7 /* SplitWorkoutManager.swift */; };
 		5D394E132B4548370005559A /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D394E122B4548370005559A /* CalendarView.swift */; };
 		5D394E1C2B45597A0005559A /* WorkoutCycleManger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D394E1B2B45597A0005559A /* WorkoutCycleManger.swift */; };
@@ -44,6 +46,8 @@
 		5D06BE072B597CC6007C1424 /* MyWorkoutListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyWorkoutListView.swift; sourceTree = "<group>"; };
 		5D06BE0A2B597D36007C1424 /* CycleListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CycleListView.swift; sourceTree = "<group>"; };
 		5D06BE0C2B597D86007C1424 /* TodayWorkoutListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayWorkoutListView.swift; sourceTree = "<group>"; };
+		5D06BE102B5A1CA2007C1424 /* CategoryListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryListViewModel.swift; sourceTree = "<group>"; };
+		5D06BE142B5A24C5007C1424 /* CategoryContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryContainerView.swift; sourceTree = "<group>"; };
 		5D1D502E2B5765F800D001B7 /* SplitWorkoutManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplitWorkoutManager.swift; sourceTree = "<group>"; };
 		5D394E122B4548370005559A /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
 		5D394E1B2B45597A0005559A /* WorkoutCycleManger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutCycleManger.swift; sourceTree = "<group>"; };
@@ -82,7 +86,9 @@
 			isa = PBXGroup;
 			children = (
 				5D06BE042B597C47007C1424 /* CategoryListView.swift */,
+				5D06BE102B5A1CA2007C1424 /* CategoryListViewModel.swift */,
 				5D0660CF2B46A0E5006B19A6 /* FilteredList.swift */,
+				5D06BE142B5A24C5007C1424 /* CategoryContainerView.swift */,
 			);
 			path = CategoryList;
 			sourceTree = "<group>";
@@ -324,6 +330,7 @@
 				5D8A4F512B26E2F100C755A0 /* PickWorkoutListCell.swift in Sources */,
 				5D394E132B4548370005559A /* CalendarView.swift in Sources */,
 				5D394E1F2B455B980005559A /* Model.xcdatamodeld in Sources */,
+				5D06BE152B5A24C5007C1424 /* CategoryContainerView.swift in Sources */,
 				5D8A4F4F2B26DA8400C755A0 /* WorkOutModel.swift in Sources */,
 				5DE0E3542B1735E700A2C701 /* ContentView.swift in Sources */,
 				5D9BC3BC2B5122E0004F4F25 /* HistoryManager.swift in Sources */,
@@ -336,6 +343,7 @@
 				5D8A4F592B2B016900C755A0 /* HomeView.swift in Sources */,
 				5DE0E3522B1735E700A2C701 /* WorkoutCycle_SwiftUI_App.swift in Sources */,
 				5D8A4F552B2702A300C755A0 /* DetailWorkoutView.swift in Sources */,
+				5D06BE112B5A1CA2007C1424 /* CategoryListViewModel.swift in Sources */,
 				5D06BE0D2B597D86007C1424 /* TodayWorkoutListView.swift in Sources */,
 				5D0660CE2B458A82006B19A6 /* AddMemoView.swift in Sources */,
 				5D1D502F2B5765F800D001B7 /* SplitWorkoutManager.swift in Sources */,
