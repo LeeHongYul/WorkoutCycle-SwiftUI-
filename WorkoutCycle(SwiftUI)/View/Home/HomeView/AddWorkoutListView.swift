@@ -15,8 +15,22 @@ struct DynamicTextField {
     var textField5: String = ""
 }
 
+struct AddAllTextField{
+    func addAllString(strings: [String]) -> String {
+
+        //단어를 하나의 문자열로 저장, 공백과 함께
+        //먼저 문자열로 받아 joined으로 "" 넣어주면됨
+        let allString = strings.joined(separator: " ")
+        print(allString)
+        return allString
+
+    }
+}
+
 
 struct AddWorkoutListView: View {
+
+    var testStringS: [String] = []
 
     @Environment(\.managedObjectContext) var managedObjContext
     @Environment(\.dismiss) var dismiss
@@ -102,13 +116,17 @@ struct AddWorkoutListView: View {
 
                 Section {
                     Button("저장") {
-                        SplitWorkoutManager().addSplit(name: manyTextField.textField1, context:managedObjContext)
-                        SplitWorkoutManager().addSplit(name: manyTextField.textField2, context:managedObjContext)
+
+                        let saveString = AddAllTextField().addAllString(strings: [manyTextField.textField1, manyTextField.textField2])
+
+
+                        SplitWorkoutManager().addSplit(name:saveString, saveDate: Date(), context:managedObjContext)
                     }
                 }
             }
         }
     }
+
 
     struct ThreeTextFieldView: View {
 
@@ -134,9 +152,10 @@ struct AddWorkoutListView: View {
                 }
                 Section {
                     Button("저장") {
-                        SplitWorkoutManager().addSplit(name: manyTextField.textField1, context:managedObjContext)
-                        SplitWorkoutManager().addSplit(name: manyTextField.textField2, context:managedObjContext)
-                        SplitWorkoutManager().addSplit(name: manyTextField.textField3, context:managedObjContext)
+                        let saveString = AddAllTextField().addAllString(strings: [manyTextField.textField1, manyTextField.textField2, manyTextField.textField3])
+
+
+                        SplitWorkoutManager().addSplit(name:saveString, saveDate: Date(), context:managedObjContext)
                     }
                 }
             }
@@ -173,10 +192,10 @@ struct AddWorkoutListView: View {
 
                 Section {
                     Button("저장") {
-                        SplitWorkoutManager().addSplit(name: manyTextField.textField1, context:managedObjContext)
-                        SplitWorkoutManager().addSplit(name: manyTextField.textField2, context:managedObjContext)
-                        SplitWorkoutManager().addSplit(name: manyTextField.textField3, context:managedObjContext)
-                        SplitWorkoutManager().addSplit(name: manyTextField.textField4, context:managedObjContext)
+                        let saveString = AddAllTextField().addAllString(strings: [manyTextField.textField1, manyTextField.textField2, manyTextField.textField3, manyTextField.textField4])
+
+
+                        SplitWorkoutManager().addSplit(name:saveString, saveDate: Date(), context:managedObjContext)
                     }
                 }
             }
@@ -217,11 +236,10 @@ struct AddWorkoutListView: View {
                 }
                 Section {
                     Button("저장") {
-                        SplitWorkoutManager().addSplit(name: manyTextField.textField1, context:managedObjContext)
-                        SplitWorkoutManager().addSplit(name: manyTextField.textField2, context:managedObjContext)
-                        SplitWorkoutManager().addSplit(name: manyTextField.textField3, context:managedObjContext)
-                        SplitWorkoutManager().addSplit(name: manyTextField.textField4, context:managedObjContext)
-                        SplitWorkoutManager().addSplit(name: manyTextField.textField5, context:managedObjContext)
+                        let saveString = AddAllTextField().addAllString(strings: [manyTextField.textField1, manyTextField.textField2, manyTextField.textField3, manyTextField.textField4, manyTextField.textField5])
+
+
+                        SplitWorkoutManager().addSplit(name:saveString, saveDate: Date(), context:managedObjContext)
                     }
                 }
             }

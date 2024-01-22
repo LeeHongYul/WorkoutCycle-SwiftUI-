@@ -20,22 +20,38 @@ struct TodayWorkoutListView: View {
                     .cornerRadius(30)
                     .padding()
                     .overlay {
-                        Text("Today is \(isTodayWorkout()) Day")
+                        Text("Today is \(getCurrentIndex()) Day")
                     }
             }
         }
     }
 
     // 하루마다 바뀌게 구현해야함
-    func isTodayWorkout() -> String {
-        var stack: [String] = []
+//    func isTodayWorkout() -> String {
+//        var stack: [String] = []
+//
+//        for i in 0..<splitWorkoutList.count {
+//            if let name = splitWorkoutList[i].name {
+//                stack.append(name)
+//            }
+//        }
+//        return stack.first ?? "No Workout"
+//    }
 
-        for i in 0..<splitWorkoutList.count {
-            if let name = splitWorkoutList[i].name {
-                stack.append(name)
-            }
+    func getCurrentIndex() -> String {
+        let currentDate = Date()
+        let calendar = Calendar.current
+
+
+        let timeDifference = calendar.dateComponents([.hour], from: splitWorkoutList.first?.saveDate ?? Date(), to: currentDate).hour ?? 0
+
+        let arrays = splitWorkoutList.first?.name!.components(separatedBy: " ")
+
+        if let arrays = arrays {
+            let newIndex = (arrays.count + 1 + timeDifference) % arrays.count
+            return arrays[newIndex]
         }
-        return stack.first ?? "No Workout"
+        return "Failed"
     }
 }
 

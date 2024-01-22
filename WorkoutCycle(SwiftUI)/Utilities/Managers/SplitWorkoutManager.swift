@@ -18,11 +18,12 @@ class SplitWorkoutManager: BaseManager {
         }
     }
 
-    func addSplit(name: String, context: NSManagedObjectContext) {
+    func addSplit(name: String, saveDate: Date, context: NSManagedObjectContext) {
 
             let newSplit = SplitWorkoutEntity(context: context)
 
             newSplit.name = name
+            newSplit.saveDate = Date()
 
             saveSplit(context: context)
         }

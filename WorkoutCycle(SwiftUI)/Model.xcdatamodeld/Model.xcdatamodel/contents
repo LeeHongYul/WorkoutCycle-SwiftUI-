@@ -13,6 +13,7 @@
     </entity>
     <entity name="SplitWorkout" representedClassName="SplitWorkoutEntity" syncable="YES" codeGenerationType="class">
         <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="saveDate" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
     </entity>
     <entity name="TodayMemo" representedClassName="TodayMemoEntity" syncable="YES" codeGenerationType="class">
         <attribute name="content" optional="YES" attributeType="String"/>
