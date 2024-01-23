@@ -8,12 +8,18 @@
 import SwiftUI
 import Alamofire
 import CoreData
+import CoreLocation
+import MapKit
 
 struct ResponseModel: Codable {
     var documents: [GymModel]
 }
 
 struct HomeView: View {
+
+
+    @State private var neighborhood = ""
+    
     @State private var gymList: [GymModel] = []
     @State private var isActive: Bool = false
 
@@ -31,17 +37,25 @@ struct HomeView: View {
                     }
 
                     Button(action: {
-                        getApi()
-                        isActive = true
+                        let manager = CLLocationManager()
+                        manager.desiredAccuracy = kCLLocationAccuracyBest
+                        manager.requestWhenInUseAuthorization()
+
+                        if let lat = manager.location?.coordinate.latitude, let lon = manager.location?.coordinate.longitude {
+                            getApi(lat: lat, lon: lon)
+                            isActive = true
+                        }
+
+
                     }) {
-                        Image(systemName: "location.north.fill")
+                        HStack {
+                            Image(systemName: "location.north.fill")
+                            Text("근처 헬스장 찾기")
+                                .font(.title2)
+                                .foregroundColor(.blue)
+
+                        }
                     }
-
-
-                    Text("Suwon, Korea")
-                        .font(.title2)
-                        .foregroundStyle(.gray)
-
 
                     Spacer()
 
@@ -66,8 +80,40 @@ struct HomeView: View {
         }
     }
 
-    func getApi() {
-        let url = "https://dapi.kakao.com/v2/local/search/keyword.json?y=37.514322572335935&x=127.06283102249932&radius=20000&query=헬스장"
+    func changeToClLocation(latitude: Double?, longitude: Double?) -> CLLocation? {
+        guard let latitude = latitude, let longitude = longitude else { return nil }
+        return CLLocation(latitude: latitude, longitude: longitude)
+    }
+
+
+    func changeToAddress(location: CLLocation?) -> String {
+        var address: String = ""
+
+        if let location = location {
+            CLGeocoder().reverseGeocodeLocation(location, completionHandler: { placemarks, error in
+                if error == nil {
+                    guard let placemarks = placemarks,
+                          let placemark = placemarks.last else { return }
+
+                    address = "\(placemark.subThoroughfare ?? ""), \(placemark.thoroughfare ?? ""), \(placemark.locality ?? ""), \(placemark.subLocality ?? ""), \(placemark.administrativeArea ?? ""), \(placemark.postalCode ?? ""), \(placemark.country ?? "")"
+                    print("\(address)!!!!!!!!!!!!!!!!!!!!!!")
+
+
+
+                } else {
+                    print("주소로 변환하지 못했습니다.")
+                }
+            })
+        }
+
+        return address
+    }
+
+
+
+
+    func getApi(lat: CLLocationDegrees, lon: CLLocationDegrees) {
+        let url = "https://dapi.kakao.com/v2/local/search/keyword.json?y=\(lat)&x=\(lon)&radius=20000&query=헬스장"
 
         let header: HTTPHeaders = [
             "Authorization": "KakaoAK 2f5f20aef317fbed29a97436ffab332f"

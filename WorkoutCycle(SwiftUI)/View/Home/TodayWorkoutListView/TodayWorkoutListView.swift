@@ -20,7 +20,7 @@ struct TodayWorkoutListView: View {
                     .cornerRadius(30)
                     .padding()
                     .overlay {
-                        Text("Today is \(getCurrentIndex()) Day")
+                        Text("\(getCurrentIndex())")
                     }
             }
         }
@@ -37,7 +37,7 @@ struct TodayWorkoutListView: View {
 //        }
 //        return stack.first ?? "No Workout"
 //    }
-
+ 
     func getCurrentIndex() -> String {
         let currentDate = Date()
         let calendar = Calendar.current
@@ -49,9 +49,9 @@ struct TodayWorkoutListView: View {
 
         if let arrays = arrays {
             let newIndex = (arrays.count + 1 + timeDifference) % arrays.count
-            return arrays[newIndex]
+            return "Today is \(arrays[newIndex]) Day"
         }
-        return "Failed"
+        return "There is No Workout"
     }
 }
 

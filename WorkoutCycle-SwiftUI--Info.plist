@@ -2,11 +2,11 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>UIBackgroundModes</key>
-	<array/>
-	<key>KAKAO_PHASE</key>
-	<string>sandbox</string>
 	<key>KAKAO_APP_KEY</key>
 	<string>d6b89318e778ff33d46a6abedb22b545</string>
+	<key>KAKAO_PHASE</key>
+	<string>sandbox</string>
+	<key>UIBackgroundModes</key>
+	<array/>
 </dict>
 </plist>
