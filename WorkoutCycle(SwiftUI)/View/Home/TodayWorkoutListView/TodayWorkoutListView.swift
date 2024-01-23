@@ -43,7 +43,7 @@ struct TodayWorkoutListView: View {
         let calendar = Calendar.current
 
 
-        let timeDifference = calendar.dateComponents([.hour], from: splitWorkoutList.first?.saveDate ?? Date(), to: currentDate).hour ?? 0
+        let timeDifference = calendar.dateComponents([.day], from: splitWorkoutList.first?.saveDate ?? Date(), to: currentDate).day ?? 0
 
         let arrays = splitWorkoutList.first?.name!.components(separatedBy: " ")
 

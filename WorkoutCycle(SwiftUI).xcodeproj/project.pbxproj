@@ -36,9 +36,14 @@
 		5DE0E3542B1735E700A2C701 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DE0E3532B1735E700A2C701 /* ContentView.swift */; };
 		5DE0E3562B1735E800A2C701 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5DE0E3552B1735E800A2C701 /* Assets.xcassets */; };
 		5DE0E3592B1735E800A2C701 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5DE0E3582B1735E800A2C701 /* Preview Assets.xcassets */; };
+		5DF519272B5FB07E00780BBA /* ApiModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DF519262B5FB07E00780BBA /* ApiModel.swift */; };
+		5DF519292B5FB0D600780BBA /* GymApiListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DF519282B5FB0D600780BBA /* GymApiListView.swift */; };
+		76E1B99206FD9D78490478E4 /* Pods_WorkoutCycle_SwiftUI_.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A7FA08E0B74BAAEB2B72645 /* Pods_WorkoutCycle_SwiftUI_.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2A7FA08E0B74BAAEB2B72645 /* Pods_WorkoutCycle_SwiftUI_.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WorkoutCycle_SwiftUI_.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		532467F51951465450B79834 /* Pods-WorkoutCycle(SwiftUI).release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WorkoutCycle(SwiftUI).release.xcconfig"; path = "Target Support Files/Pods-WorkoutCycle(SwiftUI)/Pods-WorkoutCycle(SwiftUI).release.xcconfig"; sourceTree = "<group>"; };
 		5D0660CB2B455CA5006B19A6 /* BaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseManager.swift; sourceTree = "<group>"; };
 		5D0660CD2B458A82006B19A6 /* AddMemoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMemoView.swift; sourceTree = "<group>"; };
 		5D0660CF2B46A0E5006B19A6 /* FilteredList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilteredList.swift; sourceTree = "<group>"; };
@@ -69,6 +74,9 @@
 		5DE0E3532B1735E700A2C701 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		5DE0E3552B1735E800A2C701 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5DE0E3582B1735E800A2C701 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		5DF519262B5FB07E00780BBA /* ApiModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiModel.swift; sourceTree = "<group>"; };
+		5DF519282B5FB0D600780BBA /* GymApiListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GymApiListView.swift; sourceTree = "<group>"; };
+		6D845B5953E8D69DA2189938 /* Pods-WorkoutCycle(SwiftUI).debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WorkoutCycle(SwiftUI).debug.xcconfig"; path = "Target Support Files/Pods-WorkoutCycle(SwiftUI)/Pods-WorkoutCycle(SwiftUI).debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,12 +84,30 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				76E1B99206FD9D78490478E4 /* Pods_WorkoutCycle_SwiftUI_.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		23814A10A07A7EFD4DE5E056 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				6D845B5953E8D69DA2189938 /* Pods-WorkoutCycle(SwiftUI).debug.xcconfig */,
+				532467F51951465450B79834 /* Pods-WorkoutCycle(SwiftUI).release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		2F2CE14E77D7E0273D6C8040 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2A7FA08E0B74BAAEB2B72645 /* Pods_WorkoutCycle_SwiftUI_.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		5D06BE032B597C07007C1424 /* CategoryList */ = {
 			isa = PBXGroup;
 			children = (
@@ -122,6 +148,7 @@
 			isa = PBXGroup;
 			children = (
 				5D8A4F582B2B016900C755A0 /* HomeView.swift */,
+				5DF519282B5FB0D600780BBA /* GymApiListView.swift */,
 				5D8A4F5E2B2C336300C755A0 /* AddListView.swift */,
 				5D9BC3B72B50F914004F4F25 /* AddWorkoutListView.swift */,
 			);
@@ -211,6 +238,7 @@
 			isa = PBXGroup;
 			children = (
 				5D8A4F4E2B26DA8400C755A0 /* WorkOutModel.swift */,
+				5DF519262B5FB07E00780BBA /* ApiModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -220,6 +248,8 @@
 			children = (
 				5DE0E3502B1735E700A2C701 /* WorkoutCycle(SwiftUI) */,
 				5DE0E34F2B1735E700A2C701 /* Products */,
+				23814A10A07A7EFD4DE5E056 /* Pods */,
+				2F2CE14E77D7E0273D6C8040 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -261,9 +291,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5DE0E35C2B1735E800A2C701 /* Build configuration list for PBXNativeTarget "WorkoutCycle(SwiftUI)" */;
 			buildPhases = (
+				3BF891083135AEC0E89F9E9B /* [CP] Check Pods Manifest.lock */,
 				5DE0E34A2B1735E700A2C701 /* Sources */,
 				5DE0E34B2B1735E700A2C701 /* Frameworks */,
 				5DE0E34C2B1735E700A2C701 /* Resources */,
+				05C10EE60141154F032C592F /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -319,6 +351,48 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		05C10EE60141154F032C592F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-WorkoutCycle(SwiftUI)/Pods-WorkoutCycle(SwiftUI)-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-WorkoutCycle(SwiftUI)/Pods-WorkoutCycle(SwiftUI)-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-WorkoutCycle(SwiftUI)/Pods-WorkoutCycle(SwiftUI)-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3BF891083135AEC0E89F9E9B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-WorkoutCycle(SwiftUI)-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		5DE0E34A2B1735E700A2C701 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -332,6 +406,7 @@
 				5D394E1F2B455B980005559A /* Model.xcdatamodeld in Sources */,
 				5D06BE152B5A24C5007C1424 /* CategoryContainerView.swift in Sources */,
 				5D8A4F4F2B26DA8400C755A0 /* WorkOutModel.swift in Sources */,
+				5DF519272B5FB07E00780BBA /* ApiModel.swift in Sources */,
 				5DE0E3542B1735E700A2C701 /* ContentView.swift in Sources */,
 				5D9BC3BC2B5122E0004F4F25 /* HistoryManager.swift in Sources */,
 				5D9BC3B82B50F914004F4F25 /* AddWorkoutListView.swift in Sources */,
@@ -340,6 +415,7 @@
 				5D8A4F5B2B2B02A500C755A0 /* CalendarMainView.swift in Sources */,
 				5D06BE0B2B597D36007C1424 /* CycleListView.swift in Sources */,
 				5D64764D2B551EFC00E3DA67 /* DietManager.swift in Sources */,
+				5DF519292B5FB0D600780BBA /* GymApiListView.swift in Sources */,
 				5D8A4F592B2B016900C755A0 /* HomeView.swift in Sources */,
 				5DE0E3522B1735E700A2C701 /* WorkoutCycle_SwiftUI_App.swift in Sources */,
 				5D8A4F552B2702A300C755A0 /* DetailWorkoutView.swift in Sources */,
@@ -394,7 +470,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -457,7 +533,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -478,6 +554,7 @@
 		};
 		5DE0E35D2B1735E800A2C701 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6D845B5953E8D69DA2189938 /* Pods-WorkoutCycle(SwiftUI).debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -507,6 +584,7 @@
 		};
 		5DE0E35E2B1735E800A2C701 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 532467F51951465450B79834 /* Pods-WorkoutCycle(SwiftUI).release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

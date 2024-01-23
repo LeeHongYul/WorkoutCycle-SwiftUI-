@@ -68,7 +68,7 @@ struct DietView: View {
 
         Form {
             ForEach(dietList) { diet in
-                Text((diet.dietType ?? "a") + diet.name! + String(diet.kcal))
+                Text((diet.dietType ?? "a") + diet.dateInput!.formattedString(format: "MM/dd/yyyy") + diet.name! + String(diet.kcal))
             }
         }
         .listStyle(.plain)
