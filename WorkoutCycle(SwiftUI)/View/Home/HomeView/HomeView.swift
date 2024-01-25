@@ -42,7 +42,7 @@ struct HomeView: View {
                         manager.requestWhenInUseAuthorization()
 
                         if let lat = manager.location?.coordinate.latitude, let lon = manager.location?.coordinate.longitude {
-                            getApi(lat: lat, lon: lon)
+                            getLocalAPI(lat: lat, lon: lon)
                             isActive = true
                         }
 
@@ -110,26 +110,19 @@ struct HomeView: View {
     }
 
 
-
-
-    func getApi(lat: CLLocationDegrees, lon: CLLocationDegrees) {
+    func getLocalAPI(lat: CLLocationDegrees, lon: CLLocationDegrees) {
         let url = "https://dapi.kakao.com/v2/local/search/keyword.json?y=\(lat)&x=\(lon)&radius=20000&query=헬스장"
 
         let header: HTTPHeaders = [
             "Authorization": "KakaoAK 2f5f20aef317fbed29a97436ffab332f"
         ]
-        AF.request(url, method: .get, headers: header).responseJSON { response in
-            print("response: \(response)")
 
-            var routines: [GymModel]
+        AF.request(url, method: .get, headers: header).responseJSON { response in
 
             do {
                 switch (response.result) {
-                    // 성공/실패 구분
+
                 case .success:
-                    // response의 data를 [Routineeee]로 변환
-                    //                        routines = try decoder.decode([GymModel].self, from: response.data!)
-                    //                        print("routines: \(routines)")
 
                     if let data = response.data {
                         do {

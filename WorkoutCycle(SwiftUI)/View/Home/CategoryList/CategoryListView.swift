@@ -20,7 +20,7 @@ struct CategoryListView: View {
                             selectedCategory = item.workPart
                             
                         } label: {
-                            CategoryListViewModel(imageTitle: item.workImage, title: item.workPart, bindindValue: selectedCategory)
+                            CategoryListViewSetting(imageTitle: item.workImage, title: item.workPart, bindindValue: selectedCategory)
                         }
                     }
                 }

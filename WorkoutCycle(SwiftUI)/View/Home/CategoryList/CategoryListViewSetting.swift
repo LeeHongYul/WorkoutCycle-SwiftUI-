@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-public struct CategoryListViewModel: View {
+public struct CategoryListViewSetting: View {
 
     private var imageTitle: String
     private var title: String
