@@ -74,7 +74,3 @@ struct DietView: View {
         .listStyle(.plain)
     }
 }
-
-#Preview {
-    DietView()
-}

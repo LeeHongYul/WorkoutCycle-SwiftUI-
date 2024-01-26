@@ -15,7 +15,7 @@ struct CategoryListView: View {
         HStack {
             ScrollView(.horizontal, showsIndicators: false) {
                 HStack {
-                    ForEach(categoryList,id: \.id) { item in
+                    ForEach(categoryList, id: \.id) { item in
                         Button {
                             selectedCategory = item.workPart
                             

@@ -35,7 +35,3 @@ struct AddMemoView: View {
         }
     }
 }
-
-#Preview {
-    AddMemoView()
-}

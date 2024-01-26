@@ -13,16 +13,6 @@ struct WorkCycle: Decodable {
     let workImage: String
 }
 
-struct TwoWorkoutCycleData {
-
-    static let data1 = WorkCycle(id: UUID(), workPart: "상체", workImage: "upperBody")
-    static let data2 = WorkCycle(id: UUID(), workPart: "하체", workImage: "lowerBody")
-
-    static let orderedCycleLists = [data1, data2]
-
-
-}
-
 var categoryList = [
     WorkCycle(id: UUID(), workPart: "전체", workImage: "upperBody"),
     WorkCycle(id: UUID(), workPart: "가슴", workImage: "chest"),

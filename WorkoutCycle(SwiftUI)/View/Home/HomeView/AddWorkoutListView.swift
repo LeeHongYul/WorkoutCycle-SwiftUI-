@@ -246,7 +246,3 @@ struct AddWorkoutListView: View {
         }
     }
 }
-
-#Preview {
-    AddWorkoutListView()
-}

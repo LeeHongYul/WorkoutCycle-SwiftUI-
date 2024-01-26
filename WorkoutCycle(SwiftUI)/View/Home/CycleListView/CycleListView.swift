@@ -37,7 +37,3 @@ struct CycleListView: View {
         }
     }
 }
-
-#Preview {
-    CycleListView()
-}

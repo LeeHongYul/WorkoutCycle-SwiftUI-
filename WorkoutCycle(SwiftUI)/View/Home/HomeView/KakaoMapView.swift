@@ -8,9 +8,14 @@
 import Foundation
 import KakaoMapsSDK
 import SwiftUI
+import CoreLocation
+
 
 struct KakaoMapView: UIViewRepresentable {
+
     @Binding var draw: Bool
+    @Binding var getLat: CLLocationDegrees
+    @Binding var getLon: CLLocationDegrees
 
     /// UIView를 상속한 KMViewContainer를 생성한다.
     /// 뷰 생성과 함께 KMControllerDelegate를 구현한 Coordinator를 생성하고, 엔진을 생성 및 초기화한다.
@@ -19,6 +24,7 @@ struct KakaoMapView: UIViewRepresentable {
         view.sizeToFit()
         context.coordinator.createController(view)
         context.coordinator.controller?.initEngine()
+
 
         return view
     }
@@ -31,11 +37,12 @@ struct KakaoMapView: UIViewRepresentable {
     func updateUIView(_ uiView: KMViewContainer, context: Self.Context) {
         if draw {
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+
+                context.coordinator.addViews(lat: getLat, lon: getLon)
                 context.coordinator.controller?.startEngine()
                 context.coordinator.controller?.startRendering()
             }
-        }
-        else {
+        } else {
             context.coordinator.controller?.stopRendering()
             context.coordinator.controller?.stopEngine()
         }
@@ -54,7 +61,12 @@ struct KakaoMapView: UIViewRepresentable {
 
     /// Coordinator 구현. KMControllerDelegate를 adopt한다.
     class KakaoMapCoordinator: NSObject, MapControllerDelegate {
+        func addViews() {
 
+        }
+        
+
+        
         var controller: KMController?
         var first: Bool
 
@@ -74,21 +86,21 @@ struct KakaoMapView: UIViewRepresentable {
 
           /// 엔진 생성 및 초기화 이후, 렌더링 준비가 완료되면 아래 addViews를 호출한다.
           /// 원하는 뷰를 생성한다.
-        func addViews() {
-            let defaultPosition: MapPoint = MapPoint(longitude: 126.9779692, latitude: 37.566535)
+        func addViews(lat: CLLocationDegrees, lon: CLLocationDegrees) {
+            let defaultPosition: MapPoint = MapPoint(longitude: lon, latitude: lat)
             let mapviewInfo: MapviewInfo = MapviewInfo(viewName: "mapview", viewInfoName: "map", defaultPosition: defaultPosition)
-
+            print("################\(lat)    \(lon)")
             if controller?.addView(mapviewInfo) == Result.OK {
                 let _ = controller?.getView("mapview") as! KakaoMap
             }
         }
 
         /// KMViewContainer 리사이징 될 때 호출.
-        func containerDidResized(_ size: CGSize) {
+        func containerDidResized(_ size: CGSize, lat: CLLocationDegrees, lon: CLLocationDegrees) {
             let mapView: KakaoMap? = controller?.getView("mapview") as? KakaoMap
             mapView?.viewRect = CGRect(origin: CGPoint(x: 0.0, y: 0.0), size: size)
             if first {
-                let cameraUpdate: CameraUpdate = CameraUpdate.make(target: MapPoint(longitude: 126.9779692, latitude: 37.566535), zoomLevel: 10, mapView: mapView!)
+                let cameraUpdate: CameraUpdate = CameraUpdate.make(target: MapPoint(longitude: lon, latitude: lat), zoomLevel: 10, mapView: mapView!)
                 mapView?.moveCamera(cameraUpdate)
                 first = false
             }

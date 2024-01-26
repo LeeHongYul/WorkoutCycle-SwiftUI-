@@ -17,9 +17,11 @@ struct ResponseModel: Codable {
 
 struct HomeView: View {
 
+    @State var getLat: CLLocationDegrees = 27.1231
+    @State var getLon: CLLocationDegrees = 16.123
 
     @State private var neighborhood = ""
-    
+
     @State private var gymList: [GymModel] = []
     @State private var isActive: Bool = false
 
@@ -32,7 +34,7 @@ struct HomeView: View {
             VStack{
                 HStack {
 
-                    NavigationLink(destination: GymApiListView(gymList: gymList), isActive: $isActive) {
+                    NavigationLink(destination: GymApiListView(gymList: gymList, getLat: $getLat, getLon: $getLon), isActive: $isActive) {
 
                     }
 
@@ -41,11 +43,17 @@ struct HomeView: View {
                         manager.desiredAccuracy = kCLLocationAccuracyBest
                         manager.requestWhenInUseAuthorization()
 
-                        if let lat = manager.location?.coordinate.latitude, let lon = manager.location?.coordinate.longitude {
-                            getLocalAPI(lat: lat, lon: lon)
+                        //                        if let lat = manager.location?.coordinate.latitude, let lon = manager.location?.coordinate.longitude {
+                        //                            getLocalAPI(lat: lat, lon: lon)
+                        //                            isActive = true
+                        //                        }
+                        if let location = manager.location {
+                            getLat = location.coordinate.latitude
+                            getLon = location.coordinate.longitude
+
+                            getLocalAPI(lat: getLat, lon: getLon)
                             isActive = true
                         }
-
 
                     }) {
                         HStack {

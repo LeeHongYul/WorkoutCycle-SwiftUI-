@@ -10,7 +10,7 @@ import SwiftUI
 struct TodayWorkoutListView: View {
 
     @FetchRequest(sortDescriptors: []) var splitWorkoutList: FetchedResults<SplitWorkoutEntity>
-    
+
     var body: some View {
         HStack {
             NavigationLink(destination: AddWorkoutListView()) {
@@ -26,18 +26,6 @@ struct TodayWorkoutListView: View {
         }
     }
 
-    // 하루마다 바뀌게 구현해야함
-//    func isTodayWorkout() -> String {
-//        var stack: [String] = []
-//
-//        for i in 0..<splitWorkoutList.count {
-//            if let name = splitWorkoutList[i].name {
-//                stack.append(name)
-//            }
-//        }
-//        return stack.first ?? "No Workout"
-//    }
- 
     func getCurrentIndex() -> String {
         let currentDate = Date()
         let calendar = Calendar.current
@@ -53,8 +41,4 @@ struct TodayWorkoutListView: View {
         }
         return "There is No Workout"
     }
-}
-
-#Preview {
-    TodayWorkoutListView()
 }

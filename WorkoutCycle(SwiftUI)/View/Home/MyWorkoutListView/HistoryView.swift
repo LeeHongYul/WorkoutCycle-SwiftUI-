@@ -55,7 +55,3 @@ struct HistoryView: View {
         }
     }
 }
-
-//#Preview {
-//    HistoryView()
-//}
