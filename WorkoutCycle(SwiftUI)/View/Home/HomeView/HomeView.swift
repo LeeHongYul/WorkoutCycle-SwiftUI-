@@ -17,10 +17,7 @@ struct ResponseModel: Codable {
 
 struct HomeView: View {
 
-    @State var getLat: CLLocationDegrees = 27.1231
-    @State var getLon: CLLocationDegrees = 16.123
-
-    @State private var neighborhood = ""
+    @ObservedObject var testAPIModel: GymListAPIListViewModel = GymListAPIListViewModel()
 
     @State private var gymList: [GymModel] = []
     @State private var isActive: Bool = false
@@ -34,26 +31,14 @@ struct HomeView: View {
             VStack{
                 HStack {
 
-                    NavigationLink(destination: GymApiListView(gymList: gymList, getLat: $getLat, getLon: $getLon), isActive: $isActive) {
+                    NavigationLink(destination: GymAPIListView(gymList: gymList, getLat: testAPIModel.getLat, getLon: testAPIModel.getLon), isActive: $isActive) {
 
                     }
 
                     Button(action: {
-                        let manager = CLLocationManager()
-                        manager.desiredAccuracy = kCLLocationAccuracyBest
-                        manager.requestWhenInUseAuthorization()
 
-                        //                        if let lat = manager.location?.coordinate.latitude, let lon = manager.location?.coordinate.longitude {
-                        //                            getLocalAPI(lat: lat, lon: lon)
-                        //                            isActive = true
-                        //                        }
-                        if let location = manager.location {
-                            getLat = location.coordinate.latitude
-                            getLon = location.coordinate.longitude
-
-                            getLocalAPI(lat: getLat, lon: getLon)
-                            isActive = true
-                        }
+                        getLocalAPI(lat: testAPIModel.getLat, lon: testAPIModel.getLon)
+                        isActive = true
 
                     }) {
                         HStack {

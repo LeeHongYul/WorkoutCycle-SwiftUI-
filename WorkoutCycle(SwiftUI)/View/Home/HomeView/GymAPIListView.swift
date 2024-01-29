@@ -9,14 +9,14 @@ import SwiftUI
 import Alamofire
 import CoreLocation
 
-struct GymApiListView: View {
+struct GymAPIListView: View {
 
     var gymList: [GymModel]
     
     @State var draw: Bool = false
 
-    @Binding var getLat: CLLocationDegrees
-    @Binding var getLon: CLLocationDegrees
+    @State var getLat: Double
+    @State var getLon: Double
 
 
     var body: some View {
@@ -29,8 +29,7 @@ struct GymApiListView: View {
                     .pagination(limit: 5)
                     .frame(height: geometry.size.height * 0.4)
 
-                    KakaoMapView(draw: $draw, getLat: $getLat, getLon: $getLon).onAppear(perform: {
-                        print("$$$$$$$$$$$$\(getLon) \(getLat)")
+                    KakaoMapView(draw: $draw).onAppear(perform: {
                         self.draw = true
                     }).onDisappear(perform: {
                         self.draw = false
