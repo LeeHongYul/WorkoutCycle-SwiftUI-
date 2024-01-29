@@ -33,7 +33,6 @@ struct KakaoMapView: UIViewRepresentable {
     func updateUIView(_ uiView: KMViewContainer, context: Self.Context) {
         if draw {
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-
                 context.coordinator.controller?.startEngine()
                 context.coordinator.controller?.startRendering()
             }
@@ -60,7 +59,7 @@ struct KakaoMapView: UIViewRepresentable {
         var controller: KMController?
         var first: Bool
 
-        @ObservedObject var testAPIModel: GymListAPIListViewModel = GymListAPIListViewModel()
+        @ObservedObject var gymAPIModel: GymListAPIListViewModel = GymListAPIListViewModel()
 
         override init() {
             first = true
@@ -78,9 +77,9 @@ struct KakaoMapView: UIViewRepresentable {
           /// 엔진 생성 및 초기화 이후, 렌더링 준비가 완료되면 아래 addViews를 호출한다.
           /// 원하는 뷰를 생성한다.
         func addViews() {
-            let defaultPosition: MapPoint = MapPoint(longitude: testAPIModel.getLon, latitude: testAPIModel.getLat)
+            let defaultPosition: MapPoint = MapPoint(longitude: gymAPIModel.getLon, latitude: gymAPIModel.getLat)
             let mapviewInfo: MapviewInfo = MapviewInfo(viewName: "mapview", viewInfoName: "map", defaultPosition: defaultPosition, defaultLevel: 17)
-            print("################\(testAPIModel.getLon)    \(testAPIModel.getLat)")
+           
             if controller?.addView(mapviewInfo) == Result.OK {
                     let _ = self.controller?.getView("mapview") as! KakaoMap
             }
@@ -91,7 +90,7 @@ struct KakaoMapView: UIViewRepresentable {
             let mapView: KakaoMap? = controller?.getView("mapview") as? KakaoMap
             mapView?.viewRect = CGRect(origin: CGPoint(x: 0.0, y: 0.0), size: size)
             if first {
-                let cameraUpdate: CameraUpdate = CameraUpdate.make(target: MapPoint(longitude: testAPIModel.getLon, latitude: testAPIModel.getLat), zoomLevel: 10, mapView: mapView!)
+                let cameraUpdate: CameraUpdate = CameraUpdate.make(target: MapPoint(longitude: gymAPIModel.getLon, latitude: gymAPIModel.getLat), zoomLevel: 10, mapView: mapView!)
                 mapView?.moveCamera(cameraUpdate)
                 first = false
             }

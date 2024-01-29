@@ -47,6 +47,7 @@ struct AddWorkoutListView: View {
         NavigationView {
             if splitWorkoutList.isEmpty {
                 VStack {
+
                     Form {
 
                         Section(header: Text("New Workout")) {
@@ -84,9 +85,23 @@ struct AddWorkoutListView: View {
                 }
                 .navigationTitle("Add Workout")
             } else {
-                List {
-                    ForEach(splitWorkoutList) { workout in
-                        Text(workout.name!)
+                NavigationView {
+
+                    List {
+                        ForEach(splitWorkoutList) { workout in
+                            Text(workout.name!)
+                        }
+                    }
+
+
+                }
+                .toolbar {
+                    ToolbarItem(placement: .navigationBarTrailing) {
+                        Button {
+
+                        } label: {
+                            Image(systemName: "pencil.circle")
+                        }
                     }
                 }
             }

@@ -17,7 +17,8 @@ struct ResponseModel: Codable {
 
 struct HomeView: View {
 
-    @ObservedObject var testAPIModel: GymListAPIListViewModel = GymListAPIListViewModel()
+    @ObservedObject var gymAPIModel: GymListAPIListViewModel = GymListAPIListViewModel()
+
 
     @State private var gymList: [GymModel] = []
     @State private var isActive: Bool = false
@@ -37,7 +38,7 @@ struct HomeView: View {
 
                     Button(action: {
 
-                        getLocalAPI(lat: testAPIModel.getLat, lon: testAPIModel.getLon)
+                        getLocalAPI(lat: gymAPIModel.getLat, lon: gymAPIModel.getLon)
                         isActive = true
 
                     }) {
