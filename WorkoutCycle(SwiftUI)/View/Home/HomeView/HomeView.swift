@@ -31,7 +31,7 @@ struct HomeView: View {
             VStack{
                 HStack {
 
-                    NavigationLink(destination: GymAPIListView(gymList: gymList, getLat: testAPIModel.getLat, getLon: testAPIModel.getLon), isActive: $isActive) {
+                    NavigationLink(destination: GymAPIListView(gymList: gymList), isActive: $isActive) {
 
                     }
 

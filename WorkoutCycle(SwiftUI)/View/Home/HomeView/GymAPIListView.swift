@@ -14,11 +14,7 @@ struct GymAPIListView: View {
     var gymList: [GymModel]
     
     @State var draw: Bool = false
-
-    @State var getLat: Double
-    @State var getLon: Double
-
-
+    
     var body: some View {
         NavigationView {
             GeometryReader { geometry in
